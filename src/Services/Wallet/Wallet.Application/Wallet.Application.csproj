@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+        <PackageReference Include="EventStore.Client.Grpc.Streams" Version="21.2.0" />
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.6.0" />
+        <PackageReference Include="MassTransit" Version="8.0.16" />
+        <PackageReference Include="MassTransit.Analyzers" Version="8.0.16">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="7.0.8" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Wallet.Domain\Wallet.Domain.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Consumers\TransactionCompany\" />
+      <Folder Include="Consumers\Transaction\" />
+      <Folder Include="Dtos\" />
+      <Folder Include="Transactions\V1\Commands\ChargeWalletTransaction\" />
+      <Folder Include="Transactions\V1\Commands\PaymentWithWallet\" />
+      <Folder Include="Transactions\V1\Query\" />
+      <Folder Include="Wallets\V1\Command\SubtractWallet\" />
+    </ItemGroup>
+
+</Project>

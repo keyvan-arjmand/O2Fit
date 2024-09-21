@@ -1,0 +1,34 @@
+﻿// Global using directives
+
+global using System.Net;
+global using System.Security.Claims;
+global using System.Text;
+global using System.Text.Json;
+global using AutoMapper;
+global using Common.Constants.Identity;
+global using Currency.Api;
+global using Currency.Api.Filters;
+global using Currency.Api.Middlewares;
+global using Currency.Api.Permission;
+global using Currency.Api.Services;
+global using Currency.Application;
+global using Currency.Application.Common.ApiResult;
+global using Currency.Application.Common.Exceptions;
+global using Currency.Application.Common.Interfaces.Services;
+global using Currency.Application.Common.Mapping;
+global using Currency.Domain.Common;
+global using Currency.Infrastructure;
+global using Currency.Infrastructure.Common;
+global using FluentValidation.AspNetCore;
+global using MassTransit;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Mvc.Authorization;
+global using Microsoft.AspNetCore.Mvc.Filters;
+global using Microsoft.AspNetCore.Mvc.ModelBinding;
+global using Microsoft.Extensions.Options;
+global using Microsoft.IdentityModel.Tokens;
+global using Microsoft.OpenApi.Models;
+global using MongoDB.Bson;
+global using OpenIddict.Validation.AspNetCore;
+global using Swashbuckle.AspNetCore.SwaggerGen;

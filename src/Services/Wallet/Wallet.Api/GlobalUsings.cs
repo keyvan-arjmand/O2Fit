@@ -1,0 +1,34 @@
+﻿// Global using directives
+
+global using System.Net;
+global using System.Security.Claims;
+global using System.Text;
+global using System.Text.Json;
+global using AutoMapper;
+global using Common.Constants.Identity;
+global using FluentValidation.AspNetCore;
+global using MassTransit;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Mvc.Authorization;
+global using Microsoft.AspNetCore.Mvc.Filters;
+global using Microsoft.AspNetCore.Mvc.ModelBinding;
+global using Microsoft.Extensions.Options;
+global using Microsoft.IdentityModel.Tokens;
+global using Microsoft.OpenApi.Models;
+global using MongoDB.Bson;
+global using OpenIddict.Validation.AspNetCore;
+global using Swashbuckle.AspNetCore.SwaggerGen;
+global using Wallet.Api;
+global using Wallet.Api.Filters;
+global using Wallet.Api.Middlewares;
+global using Wallet.Api.Permission;
+global using Wallet.Api.Services;
+global using Wallet.Application;
+global using Wallet.Application.Common.ApiResult;
+global using Wallet.Application.Common.Exceptions;
+global using Wallet.Application.Common.Interfaces.Services;
+global using Wallet.Application.Common.Mapping;
+global using Wallet.Domain.Common;
+global using Wallet.Infrastructure;
+global using Wallet.Infrastructure.Common;

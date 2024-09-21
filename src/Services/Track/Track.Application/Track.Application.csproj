@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Track.Domain\Track.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+        <PackageReference Include="EventStore.Client.Grpc.Streams" Version="21.2.0" />
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.6.0" />
+        <PackageReference Include="MassTransit" Version="8.0.16" />
+        <PackageReference Include="MassTransit.Analyzers" Version="8.0.16">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="2.2.0" />
+        <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="7.0.8" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Consumers\Specification\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="TrackMeals\V1\Commands\PartialUpdateTrackMeals\PatchTrackMealFoodsCommandValidator.cs" />
+      <Compile Remove="TrackMeals\V1\Queries\GetByMealTrackMeal\GetByMealTrackMealQueryHandler.cs" />
+      <Compile Remove="TrackMeals\V1\Commands\DeleteTrackMealFood\DeleteTrackMealFoodCommandValidator.cs" />
+      <Compile Remove="TrackMeals\V1\Commands\PartialUpdateTrackMeals\PatchTrackMealFoodsCommand.cs" />
+      <Compile Remove="TrackMeals\V1\Commands\InsertTrackMeals\InsertTrackMealsCommand.cs" />
+      <Compile Remove="TrackMeals\V1\Commands\InsertTrackMeals\InsertTrackMealsCommandHandler.cs" />
+      <Compile Remove="TrackMeals\V1\Queries\GetAllTrackMeals\GetAllTrackMealQueryHandler.cs" />
+      <Compile Remove="TrackMeals\V1\Queries\GetAllTrackMeals\GetAllTrackMealQuery.cs" />
+      <Compile Remove="TrackMeals\V1\Queries\GetAllTrackMeals\GetAllTrackMealQueryValidator.cs" />
+      <Compile Remove="TrackRecipes\V1\Queries\GetByFoodIdTrackRecipe\GetByFoodIdTrackRecipeQueryValidator.cs" />
+      <Compile Remove="TrackRecipes\V1\Queries\GetByFoodIdTrackRecipe\GetByFoodIdTrackRecipeQueryHandler.cs" />
+      <Compile Remove="TrackRecipes\V1\Commands\SoftDeleteTrackRecipe\SoftDeleteTrackRecipeCommand.cs" />
+      <Compile Remove="TrackRecipes\V1\Commands\SoftDeleteTrackRecipe\SoftDeleteTrackRecipeCommandValidator.cs" />
+      <Compile Remove="TrackRecipes\V1\Queries\GetAllTrackRecipe\GetAllTrackRecipeQuery.cs" />
+      <Compile Remove="TrackRecipes\**" />
+      <Compile Remove="TrackBurnedCalories\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="TrackRecipes\**" />
+      <EmbeddedResource Remove="TrackBurnedCalories\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="TrackRecipes\**" />
+      <None Remove="TrackBurnedCalories\**" />
+    </ItemGroup>
+    
+</Project>

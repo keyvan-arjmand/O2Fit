@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>c03135ee-cbf5-4ae4-9c59-768b8f82b248</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\v2\**" />
+    <Compile Remove="Infrastructure\**" />
+    <Content Remove="Controllers\v2\**" />
+    <Content Remove="Infrastructure\**" />
+    <EmbeddedResource Remove="Controllers\v2\**" />
+    <EmbeddedResource Remove="Infrastructure\**" />
+    <None Remove="Controllers\v2\**" />
+    <None Remove="Infrastructure\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Advertising.WebFramework\Advertising.WebFramework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="localization.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+
+</Project>

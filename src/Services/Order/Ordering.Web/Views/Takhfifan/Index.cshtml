@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using Ordering.Domain.Entities.Package
+@{
+  var packages= ViewData["packages"] as List<Package>;
+}
+<div class="row align-content-center">
+    <div class="col-md-4">
+        <form action="/" method="post">
+            <input class="form-control" type="text" placeholder="مثال:09121234567" />
+            <select>
+                @foreach (var item in packages)
+                {
+                    <option value="@item.Id">پکیج @item.Duration روزه مبلغ @item.Price تومان </option>
+                }
+            </select>
+            <input type="submit" class="btn btn-success btn-sm" />
+        </form>
+    </div>
+</div>

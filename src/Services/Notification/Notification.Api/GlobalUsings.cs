@@ -1,0 +1,33 @@
+﻿// Global using directives
+
+global using System.Net;
+global using System.Security.Claims;
+global using AutoMapper;
+global using Common.Constants.Identity;
+global using FirebaseAdmin;
+global using FluentValidation.AspNetCore;
+global using Google.Apis.Auth.OAuth2;
+global using MassTransit;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Mvc.Authorization;
+global using Microsoft.AspNetCore.Mvc.Filters;
+global using Microsoft.AspNetCore.Mvc.ModelBinding;
+global using Microsoft.Extensions.Options;
+global using Microsoft.IdentityModel.Tokens;
+global using Microsoft.OpenApi.Models;
+global using MongoDB.Bson;
+global using Notification.Api;
+global using Notification.Api.Filters;
+global using Notification.Api.Permission;
+global using Notification.Api.Services;
+global using Notification.Application;
+global using Notification.Application.Common.ApiResult;
+global using Notification.Application.Common.Exceptions;
+global using Notification.Application.Common.Interfaces.Services;
+global using Notification.Application.Common.Mapping;
+global using Notification.Domain.Common;
+global using Notification.Infrastructure;
+global using OpenIddict.Validation.AspNetCore;
+global using Steeltoe.Discovery.Client;
+global using Swashbuckle.AspNetCore.SwaggerGen;

@@ -1,0 +1,40 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Track.Grpc";
+
+package greet;
+
+import "google/protobuf/timestamp.proto";
+
+// The greeting service definition.
+service UserTracks {
+    // Sends a greeting
+    rpc GetUserTrackSpecification (UserTrackSpecificationRequest) returns (UserTrackSpecificationReply);
+}
+
+// The request message containing the user's name.
+message UserTrackSpecificationRequest {
+    string id = 1;
+}
+message UserTrackSpecificationReply {
+    repeated UserTrack tracks = 1;
+}
+// The response message containing the greetings.
+message UserTrack {
+    optional double weight = 1;
+    optional double neck = 2;
+    optional double shoulder = 3;
+    optional double arm = 4;
+    optional double wrist = 5;
+    optional double chest = 6;
+    optional double waist = 7;
+    optional double high_hip = 8;
+    optional double hip = 9;
+    optional double thigh = 10;
+    optional string image = 11;
+    optional string note = 12;
+    google.protobuf.Timestamp date_time = 13;
+    string user_id = 14;
+    string id = 15;
+    string app_id = 16;
+}

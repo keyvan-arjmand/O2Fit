@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="MediatR.Contracts" Version="2.0.1" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Contracts\Services\Nutritionist\PackageRequest\" />
+    <Folder Include="Events\Services\Discount\Command\SubTrackUsableCountDiscount\" />
+    <Folder Include="Events\Services\Identity\Package\" />
+    <Folder Include="Events\Services\Nutritionist\Query\" />
+    <Folder Include="Events\Services\Payment\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Enums\Common.Enums.csproj" />
+  </ItemGroup>
+
+</Project>

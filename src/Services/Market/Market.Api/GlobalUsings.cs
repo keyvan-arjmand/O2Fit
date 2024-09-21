@@ -1,0 +1,32 @@
+﻿// Global using directives
+
+global using System.Net;
+global using System.Security.Claims;
+global using System.Text;
+global using AutoMapper;
+global using Common.Constants.Identity;
+global using FluentValidation.AspNetCore;
+global using Market.Api;
+global using Market.Api.Filters;
+global using Market.Api.Permission;
+global using Market.Api.Services;
+global using Market.Application;
+global using Market.Application.Common.ApiResult;
+global using Market.Application.Common.Exceptions;
+global using Market.Application.Common.Interfaces.Services;
+global using Market.Application.Common.Mapping;
+global using Market.Domain.Common;
+global using Market.Infrastructure;
+global using MassTransit;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Mvc.Authorization;
+global using Microsoft.AspNetCore.Mvc.Filters;
+global using Microsoft.AspNetCore.Mvc.ModelBinding;
+global using Microsoft.Extensions.Options;
+global using Microsoft.IdentityModel.Logging;
+global using Microsoft.IdentityModel.Tokens;
+global using Microsoft.OpenApi.Models;
+global using MongoDB.Bson;
+global using OpenIddict.Validation.AspNetCore;
+global using Swashbuckle.AspNetCore.SwaggerGen;

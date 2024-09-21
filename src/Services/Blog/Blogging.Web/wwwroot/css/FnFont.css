@@ -1,0 +1,9 @@
+﻿@font-face {
+    font-family: iranyekan;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/eot/iranyekanwebregularfanum.eot');
+    src: url('../fonts/eot/iranyekanwebregularfanum.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+    url('../fonts/woff/iranyekanwebregularfanum.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/iranyekanwebregularfanum.ttf') format('truetype');
+}

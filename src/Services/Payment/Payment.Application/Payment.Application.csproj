@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="EventStore.Client.Grpc.Streams" Version="21.2.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.6.0" />
+    <PackageReference Include="MassTransit" Version="8.0.16" />
+    <PackageReference Include="MassTransit.Analyzers" Version="8.0.16">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="7.0.8" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Payment.Domain\Payment.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="PackageAdvertises\V1\Commands\" />
+    <Folder Include="PackageAdvertises\V1\Queries\" />
+    <Folder Include="PackageCalorieCounting\" />
+    <Folder Include="TransactionDietNutritionists\V1\Commands\" />
+    <Folder Include="TransactionDietNutritionists\V1\Queries\" />
+    <Folder Include="Transactions\V1\Command\CreateTransactionWallet\" />
+    <Folder Include="Transactions\V1\Command\UpdateTransactionMyket\" />
+    <Folder Include="Transactions\V1\Command\UpdateTransactionCafeBazar\" />
+    <Folder Include="Transactions\V1\Query\GetById\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="PackageAdmin\V1\Commands\UpdatePackageTranslationDescriptionAdmin\**" />
+    <Compile Remove="PackageAdmin\V1\Commands\UpdatePackageTranslationNameAdmin\**" />
+    <Compile Remove="PackageAdmin\**" />
+    <Compile Remove="PackagesNutritionist\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="PackageAdmin\V1\Commands\UpdatePackageTranslationDescriptionAdmin\**" />
+    <EmbeddedResource Remove="PackageAdmin\V1\Commands\UpdatePackageTranslationNameAdmin\**" />
+    <EmbeddedResource Remove="PackageAdmin\**" />
+    <EmbeddedResource Remove="PackagesNutritionist\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="PackageAdmin\V1\Commands\UpdatePackageTranslationDescriptionAdmin\**" />
+    <None Remove="PackageAdmin\V1\Commands\UpdatePackageTranslationNameAdmin\**" />
+    <None Remove="PackageAdmin\**" />
+    <None Remove="PackagesNutritionist\**" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,36 @@
+﻿// Global using directives
+
+global using System.ComponentModel;
+global using System.ComponentModel.DataAnnotations;
+global using System.Linq.Expressions;
+global using System.Reflection;
+global using AutoMapper;
+global using Common.Enums;
+global using Common.Enums.TypeEnums;
+global using EventBus.Messages.Events.Services.Nutritionist;
+global using EventBus.Messages.Events.Services.Nutritionist.Order;
+global using FluentValidation;
+global using MassTransit;
+global using MediatR;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Logging;
+global using MongoDB.Bson;
+global using MongoDB.Driver;
+global using Newtonsoft.Json;
+global using Nutritionist.Application.Common.Behaviours;
+global using Nutritionist.Application.Common.Exceptions;
+global using Nutritionist.Application.Common.Interfaces.Persistence.Repositories;
+global using Nutritionist.Application.Common.Interfaces.Persistence.UoW;
+global using Nutritionist.Application.Common.Interfaces.Services;
+global using Nutritionist.Application.Common.Mapping;
+global using Nutritionist.Application.Common.Models;
+global using Nutritionist.Application.Common.Utilities;
+global using Nutritionist.Application.Dtos.NutritionistOrders;
+global using Nutritionist.Application.NutritionistOrders.V1.Commands;
+global using Nutritionist.Application.NutritionistOrders.V1.Commands.RejectNutritionistOrder;
+global using Nutritionist.Application.NutritionistOrders.V1.Queries.GetAllNutritionistPendingOrders;
+global using Nutritionist.Domain.Aggregates.NutritionistOrderAggregate;
+global using Nutritionist.Domain.Aggregates.NutritionistUserPackageAggregate;
+global using Nutritionist.Domain.Common;
+global using Nutritionist.Domain.Enums;
+global using Quartz;

@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option csharp_namespace = "Food.Grpc";
+
+package greet;
+
+service DietPacks {
+  rpc DietUserPackage (RequestGetDietPack) returns (ResonseDietPack);
+}
+
+message RequestGetDietPack {
+ double dailyCalorie=1;
+ int32 dietCategoryId=2;
+ string allergyIds=4;
+}
+message ResonseDietPack{
+	repeated GrpcDietPack DietPacks=1;
+}
+
+message GrpcDietPack {
+  int32 foodMeal=1;
+  double caloriValue =2;
+  string nutrientValue =3;
+  GrpcTranslaltion name=4;
+  double dailyCalorie=5;
+  repeated GrpcDietPackFood dietPackFoods = 6;
+  int32 Id =7;
+}
+
+message GrpcDietPackFood{
+double measureUnitValue=1;
+int32 categoryChildId=2;
+int32 foodId=3;
+GrpcTranslaltion foodName=4;
+int32 measureUnitId=5;
+GrpcTranslaltion measureUnitName=6;
+int32 calorie=7;
+string nutrientValue=8;
+double value=9;
+ int32 Id =10;
+}
+
+message GrpcTranslaltion{
+	int32 Id =1;
+	string Persian=2;
+	string English=3;
+	string Arabic =4;
+}

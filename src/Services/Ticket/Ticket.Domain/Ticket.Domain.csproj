@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MediatR" Version="12.1.1" />
+        <PackageReference Include="MongoDB.Driver" Version="2.21.0" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\BuildingBlocks\Common.Constants\Common.Constants.csproj" />
+      <ProjectReference Include="..\..\..\BuildingBlocks\Common.Enums\Common.Enums.csproj" />
+      <ProjectReference Include="..\..\..\BuildingBlocks\EventBus.Messages\EventBus.Messages.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Exceptions\" />
+      <Folder Include="ValueObjects\" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,916 @@
+version: '3.4'
+
+services:
+
+  #============== Food ===========
+  foodstuff.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ConnectionStrings:Redis=foodstuffcache,abortConnect=false
+      - RedisClient:Hosts:Host=foodstuffcache
+    ports:
+      - "5000:80"
+      - "6000:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ./src/Services/Food/FoodStuff.API/wwwroot:/wwwroot/
+    depends_on:
+      - foodstuffcache
+      #links:
+      # - foodstuffcache
+
+  foodstuffcache:
+    ports:
+      - "6300:6379"
+    volumes:
+      - ./RedisData/foodstuffcache:/data
+    #environment:
+    #  - REDIS_PORT=6300
+    #command: foodstuffcache
+
+
+    # ========= Food gRPC ===========
+  foodstuff.grpc:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ConnectionStrings:Redis=foodgrpccache,abortConnect=false
+    ports:
+      - "5013:80"
+      - "6013:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ./src/Services/FoodGrpc/Food.Grpc/wwwroot:/wwwroot/
+    depends_on:
+      - foodgrpccache
+      #links:
+      # - foodstuffcache
+
+  foodgrpccache:
+    ports:
+      - "6311:6379"
+    volumes:
+      - ./RedisData/foodgrpccache:/data
+
+
+  #============== Advertise ===========
+
+  advertise.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ConnectionStrings:Redis=advertisecache
+    ports:
+      - "5001:80"
+      - "6001:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ./src/Services/Advertise/Advertising.API/wwwroot:/wwwroot/
+    depends_on:
+      - advertisecache
+
+
+  advertisecache:
+    ports:
+      - "6301:6379"
+    volumes:
+      - ./RedisData/advertisecache:/data
+
+
+
+  #============== Blogging ===========
+
+  blogging.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ConnectionStrings:Redis=bloggingcache,abortConnect=false
+    ports:
+      - "5002:80"
+      - "6002:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ./src/Services/Blog/Blogging.API/wwwroot:/wwwroot/
+    depends_on:
+      - bloggingcache
+
+
+  bloggingcache:
+    ports:
+      - "6302:6379"
+    volumes:
+      - ./RedisData/bloggingcache:/data
+
+
+
+  #============== Identity ===========
+
+  identity.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ConnectionStrings:Redis=identitycache,abortConnect=false
+      - RedisClient:Hosts:Host=identitycache
+    ports:
+      - "5003:80"
+      - "6003:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ./src/Services/Identity/Identity.API/wwwroot:/wwwroot/
+    depends_on:
+      - identitycache
+
+  identitycache:
+    ports:
+      - "6303:6379"
+    volumes:
+      - ./RedisData/identitycache:/data
+
+  #============== Ordering ===========
+
+  ordering.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ConnectionStrings:Redis=orderingapicache,abortConnect=false
+      - RedisClient:Hosts:Host=orderingapicache
+    ports:
+      - "5004:80"
+      - "6004:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - orderingapicache
+
+  orderingapicache:
+    ports:
+      - "6304:6379"
+    volumes:
+      - ./RedisData/orderingapicache:/data
+
+
+  ordering.web:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5005:80"
+      - "6005:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ./src/Services/Order/Ordering.Web/wwwroot:/wwwroot/
+  
+  
+  #============== Socialmessaging ===========
+
+  socialmessaging.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ConnectionStrings:Redis=socialmessagingcache,abortConnect=false
+      - RedisClient:Hosts:Host=socialmessagingcache
+    ports:
+      - "5006:80"
+      - "6006:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ./src/Services/Social/SocialMessaging.API/wwwroot:/wwwroot/
+    depends_on:
+      - socialmessagingcache
+
+
+  socialmessagingcache:
+    ports:
+      - "6306:6379"
+    volumes:
+      - ./RedisData/socialmessagingcache:/data
+
+
+  #============== user ===========
+
+  user.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ConnectionStrings:Redis=usercache,abortConnect=false
+      - RedisClient:Hosts:Host=usercache
+    ports:
+      - "5007:80"
+      - "6007:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ./src/services/User/User.API/wwwroot:/wwwroot/
+    depends_on:
+      - usercache
+
+  usercache:
+    ports:
+      - "6307:6379"
+    volumes:
+      - ./RedisData/usercache:/data
+
+
+
+  #============== o2fituserhistory ===========
+
+  o2fituserhistory.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5008:80"
+      - "6008:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+
+  #============== Workouttracker ===========
+
+  workouttracker.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ConnectionStrings:Redis=workouttrackercache,abortConnect=false
+    ports:
+      - "5009:80"
+      - "6009:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ./src/Services/WorkOut/WorkoutTracker.API/wwwroot:/wwwroot/
+    depends_on:
+      - workouttrackercache
+
+
+  workouttrackercache:
+    ports:
+      - "6308:6379"
+    volumes:
+      - ./RedisData/workouttrackercache:/data
+
+    #=========== Identity V2 =================
+  identity.v2.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      # - ASPNETCORE_HTTPS_PORT=6012
+      #- ASPNETCORE_Kestrel__Certificates__Default__Path:/root/.aspnet/https/aspnetapp.pfx
+      #- ASPNETCORE_Kestrel__Certificates__Default__Password:12345678
+    ports:
+      - "5012:80"
+      - "6012:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https/
+      - ./src/Services/Identity.V2/Identity.V2.Api/wwwroot:/wwwroot/
+      #- ./DataProtectionKeys/Identity.V2:/var/lib/bff/dataprotectionkeys/
+    depends_on:
+      - eventsourcing
+      - identity.v2.cashe
+      #- identity.v2.api2
+      # - jobdb
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+  
+  identity.v2.api2:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      # - ASPNETCORE_HTTPS_PORT=6012
+      #- ASPNETCORE_Kestrel__Certificates__Default__Path:/root/.aspnet/https/aspnetapp.pfx
+      #- ASPNETCORE_Kestrel__Certificates__Default__Password:12345678
+    ports:
+      - "8012:80"
+      - "8013:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https/
+      - ./src/Services/Identity.V2/Identity.V2.Api/wwwroot:/wwwroot/
+      #- ./DataProtectionKeys/Identity.V2:/var/lib/bff/dataprotectionkeys/
+    depends_on:
+      - eventsourcing
+      - identity.v2.cashe
+      #- jobdb
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    #- "host.docker.internal:104.248.221.215"
+  identity.v2.testweb:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    
+    ports:
+      - "5016:80"
+      - "6016:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https/
+      - ./src/Services/Identity.V2/Identity.V2.TestWeb/wwwroot:/wwwroot/
+  
+  
+  identity.v2.testapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5018:80"
+      - "6018:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https/
+      - ./src/Services/Identity.V2/Identity.V2.TestApi/wwwroot:/wwwroot/
+  
+  identity.v2.resourceserver:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5022:80"
+      - "6022:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https/
+      - ./src/Services/Identity.V2/Identity.V2.ResourceServer/MachineKey:/app-keys/
+      #- ./DataProtectionKeys/Identity.V2:/var/lib/bff/dataprotectionkeys/
+
+  identity.v2.grpc:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ConnectionStrings:Redis=payment.cache,abortConnect=false
+    ports:
+      - "5028:80"
+      - "6028:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - identity.v2.cashe
+  
+  identity.v2.cashe:
+    ports:
+      - "6310:6379"
+    volumes:
+      - ./RedisData/Identity.V2:/data
+    
+    #  jobdb:
+    #    container_name: jobdb
+    #    environment:
+    #      - POSTGRES_USER=postgres
+    #      - POSTGRES_PASSWORD=m12345678
+    #    ports:
+    #      - '8432:5432'
+    #    volumes:
+    #      - db:/var/lib/postgresql/data
+
+    #============ Payment ============ 
+  payment.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5014:80"
+      - "6014:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ./src/Services/Payment/Payment.Api/wwwroot:/wwwroot/
+    depends_on:
+      - eventsourcing
+      - payment.cache
+
+  payment.web:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5015:80"
+      - "6015:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ./src/Services/Payment/Payment.Web/wwwroot:/wwwroot/
+    depends_on:
+      - eventsourcing
+  
+  payment.grpc:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ConnectionStrings:Redis=payment.cache,abortConnect=false
+    ports:
+      - "5023:80"
+      - "6023:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - payment.cache
+  
+  payment.cache:
+    ports:
+      - "6312:6379"
+    volumes:
+      - ./RedisData/Payment:/data
+
+
+  #============ Discount ============ 
+  discount.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5017:80"
+      - "6017:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ./src/Services/Discount/Discount.Api/wwwroot:/wwwroot/
+    depends_on:
+      - eventsourcing
+      - discount.cache
+
+  discount.grpc:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ConnectionStrings:Redis=discount.cache,abortConnect=false
+    ports:
+      - "5024:80"
+      - "6024:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - discount.cache
+
+  discount.cache:
+    ports:
+      - "6313:6379"
+    volumes:
+      - ./RedisData/Discount:/data
+  
+  # ========= Order.V2 ===============
+  order.v2.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5019:80"
+      - "6019:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ./src/Services/Order.V2/Order.V2.Api/wwwroot:/wwwroot/
+    depends_on:
+      - eventsourcing
+      - order.v2.cache
+
+  order.v2.grpc:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ConnectionStrings:Redis=order.v2.cache,abortConnect=false
+    ports:
+      - "5025:80"
+      - "6025:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - order.v2.cache
+  
+  order.v2.cache:
+    ports:
+      - "6314:6379"
+    volumes:
+      - ./RedisData/OrderV2:/data
+
+  # ======= Currency ========
+  currency.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      #- ASPNETCORE_Kestrel__Certificates__Default__Password=12345678
+      #- ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+    ports:
+      - "5020:80"
+      - "6020:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      #- ~/.aspnet/https:/https:ro
+      - ${APPDATA}/.aspnet/https:/https:ro
+      - ./src/Services/Currency/Currency.Api/wwwroot:/wwwroot/
+    depends_on:
+      - eventsourcing
+      - currency.cache
+  
+  currency.grpc:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ConnectionStrings:Redis=currency.cache,abortConnect=false
+    ports:
+      - "5026:80"
+      - "6026:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - currency.cache
+  
+  currency.cache:
+    ports:
+      - "6315:6379"
+    volumes:
+      - ./RedisData/Currency:/data
+  
+  # ======= Wallet ========
+  wallet.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5021:80"
+      - "6021:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ./src/Services/Wallet/Wallet.Api/wwwroot:/wwwroot/
+    depends_on:
+      - eventsourcing
+      - wallet.cache
+
+  wallet.grpc:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ConnectionStrings:Redis=wallet.cache,abortConnect=false
+    ports:
+      - "5027:80"
+      - "6027:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - wallet.cache
+  
+  wallet.cache:
+    ports:
+      - "6316:6379"
+    volumes:
+      - ./RedisData/Wallet:/data
+  
+  #=========== Track ============
+  track.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5029:80"
+      - "6029:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - eventsourcing
+      - track.cache
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  track.grpc:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5030:80"
+      - "6030:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - eventsourcing
+      - track.cache
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+  
+  track.cache:
+    ports:
+      - "6317:6379"
+    volumes:
+      - ./RedisData/Track:/data
+  
+  
+  #=============== Food V2 =================
+  food.v2.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5031:80"
+      - "6031:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - eventsourcing
+      - food.v2.cache
+  
+  food.v2.cache:
+    ports:
+      - "6318:6379"
+    volumes:
+      - ./RedisData/FoodV2:/data
+  
+  #========== Notification ===============
+  notification.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5032:80"
+      - "6032:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - notification.cache
+      - eureka-server
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+  
+  notification.api-2:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "7032:80"
+      - "8032:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - notification.cache
+      - eureka-server
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  notification.api-3:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "7033:80"
+      - "8033:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - notification.cache
+      - eureka-server
+  
+  notification.cache:
+    ports:
+      - "6319:6379"
+    volumes:
+      - ./RedisData/Notification:/data
+  
+  #=========== Nutritionist ==============
+  nutritionist.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5010:80"
+      - "6010:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - nutritionist.cache
+
+  nutritionist.cache:
+    ports:
+      - "6320:6379"
+    volumes:
+      - ./RedisData/Nutritionist:/data
+  
+  
+  #=========== Ticket ==============
+  ticket.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5011:80"
+      - "6011:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - ticket.cache
+
+  ticket.cache:
+    ports:
+      - "6321:6379"
+    volumes:
+      - ./RedisData/Ticket:/data
+  
+  
+  #=========== advertise ==============
+  advertise.v2.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5033:80"
+      - "6033:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - advertise.cache
+
+  advertise.cache:
+    ports:
+      - "6322:6379"
+    volumes:
+      - ./RedisData/Advertise:/data
+    #=========== Workout V2 ==============
+  workout.v2.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5034:80"
+      - "6034:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - workout.v2.cache
+
+  workout.v2.cache:
+    ports:
+      - "6323:6379"
+    volumes:
+      - ./RedisData/Workout.V2:/data
+      
+      #============== Market =============
+  
+  market.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5035:80"
+      - "6035:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - market.cache
+  
+  market.cache:
+    ports:
+      - "6324:6379"
+    volumes:
+      - ./RedisData/market:/data
+      
+  #================ Chat ====================    
+      
+  chat.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "5036:80"
+      - "6036:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - chat.cache
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+  chat.cache:
+    ports:
+      - "6325:6379"
+    volumes:
+      - ./RedisData/chat:/data
+ 
+      
+      
+      #============== yarpapigateway ===========
+
+  yarpapigateway.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "7000:80"
+      - "8000:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - identity.v2.api
+      - notification.api
+      - notification.api-2
+  
+  yarp-api-gateway-service-discovery:
+    restart: always
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Path:/root/.aspnet/https/aspnetapp.pfx
+      - ASPNETCORE_Kestrel__Certificates__Default__Password:12345678
+    ports:
+      - "7001:80"
+      - "8001:443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - eureka-server
+      - identity.v2.api
+      - notification.api
+      - notification.api-2
+  
+  eureka-server:
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+  #============== rabbitmq ===========
+  
+  #  rabbitmq:
+  #    container_name: rabbitmq
+  #    restart: always
+  #    ports:
+  #      - "15672:15672"
+  #      - "5672:5672"
+
+  #====== EventSourcing ===========
+
+  eventsourcing:
+    container_name: eventsourcing
+    restart: always
+    environment:
+      - EVENTSTORE_CLUSTER_SIZE=1
+      - EVENTSTORE_RUN_PROJECTIONS=All
+      - EVENTSTORE_START_STANDARD_PROJECTIONS=true
+      - EVENTSTORE_EXT_TCP_PORT=1113
+      - EVENTSTORE_HTTP_PORT=2113
+      - EVENTSTORE_INSECURE=true
+      - EVENTSTORE_ENABLE_EXTERNAL_TCP=true
+      - EVENTSTORE_ENABLE_ATOM_PUB_OVER_HTTP=true
+    ports:
+      - "1113:1113"
+      - "2113:2113"
+    volumes:
+      - type: volume
+        source: eventstore-volume-data
+        target: /var/lib/eventstore
+      - type: volume
+        source: eventstore-volume-logs
+        target: /var/log/eventstore
+    
+    #========= Mongodb =========
+    #test.mongodb:
+    #  ports:
+    #    - "27017:27017"
+  
+  #====== Integration Tests =========
+
+  #integration.tests:
+  #  volumes:
+  #    - .:/src
+  #    - .:/test
+  #  working_dir: /src
+  #  depends_on:
+  #    - rabbitmq
+  #    - payment.api
+  #    - currency.api
+  #  command: 
+  #    [
+  #      "dotnet",
+  #      "test",
+  #      "./tests/Services/Payment/IntegrationTests/Payment.IntegrationTests/Payment.IntegrationTests.csproj"
+  #    ]
+
+volumes:
+  eventstore-volume-data:
+  eventstore-volume-logs:
+#  db:
+#    driver: local

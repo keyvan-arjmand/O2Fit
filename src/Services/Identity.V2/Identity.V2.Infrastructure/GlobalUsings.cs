@@ -1,0 +1,37 @@
+// Global using directives
+
+global using System.Collections;
+global using System.Linq.Expressions;
+global using System.Text.Json;
+global using Identity.V2.Application.Common.Interfaces.Persistence.Repositories;
+global using Identity.V2.Application.Common.Interfaces.Persistence.UoW;
+global using Identity.V2.Application.Common.Interfaces.Services;
+global using Identity.V2.Application.Common.Models;
+global using Identity.V2.Application.Dtos.Users;
+global using Identity.V2.Domain.Aggregates.CountryAggregate;
+global using Identity.V2.Domain.Aggregates.UserAggregate;
+global using Identity.V2.Domain.Common;
+global using Identity.V2.Domain.Common.User;
+global using Identity.V2.Infrastructure.Common;
+global using Identity.V2.Infrastructure.Persistence;
+global using Identity.V2.Infrastructure.Persistence.Repositories;
+global using Identity.V2.Infrastructure.Persistence.UoW;
+global using Identity.V2.Infrastructure.Services;
+global using Identity.V2.Infrastructure.Services.Identity;
+global using Identity.V2.Infrastructure.WebServices.Email;
+global using Identity.V2.Infrastructure.WebServices.Sms;
+global using MediatR;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using Mongo.Migration.Migrations.Document;
+global using Mongo.Migration.Startup;
+global using Mongo.Migration.Startup.DotNetCore;
+global using MongoDB.Bson;
+global using MongoDB.Bson.Serialization;
+global using MongoDB.Bson.Serialization.Conventions;
+global using MongoDB.Bson.Serialization.IdGenerators;
+global using MongoDB.Bson.Serialization.Serializers;
+global using MongoDB.Driver;
+global using MongoDB.Driver.Linq;
+global using StackExchange.Redis;

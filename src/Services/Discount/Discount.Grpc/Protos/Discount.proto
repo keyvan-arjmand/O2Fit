@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option csharp_namespace = "Discount.Grpc";
+
+package greet;
+
+service Greeter {
+ rpc SubtractUsableNumberDiscount (SubtractUsableNumberDiscountRequest) returns (SubtractUsableNumberDiscountReply);
+ }
+
+message SubtractUsableNumberDiscountRequest {
+  string Id = 1;
+}
+
+message SubtractUsableNumberDiscountReply {
+}

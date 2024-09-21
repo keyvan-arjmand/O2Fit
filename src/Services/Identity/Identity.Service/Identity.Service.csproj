@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.78" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="3.1.9" />
+    <PackageReference Include="Refit" Version="5.2.4" />
+    <PackageReference Include="Refit.HttpClientFactory" Version="5.2.4" />
+    <PackageReference Include="SmsIrRestfulNetCore" Version="1.1.4" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Identity.Data\Identity.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="v2\Command\" />
+  </ItemGroup>
+
+</Project>

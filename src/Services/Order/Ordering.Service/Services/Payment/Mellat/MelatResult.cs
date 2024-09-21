@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Ordering.Service.Services.Payment.Mellat
+{
+    public class MelatResult
+    {
+        public string RefId { get; set; }
+        public string ResCode { get; set; }
+        public string SaleOrderId { get; set; }
+        public string SaleReferenceId { get; set; }
+    }
+}

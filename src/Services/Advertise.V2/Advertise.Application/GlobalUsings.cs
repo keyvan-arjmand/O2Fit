@@ -1,0 +1,32 @@
+﻿// Global using directives
+
+global using System.ComponentModel;
+global using System.ComponentModel.DataAnnotations;
+global using System.Diagnostics;
+global using System.Linq.Expressions;
+global using System.Reflection;
+global using Advertise.Application.Common.Behaviours;
+global using Advertise.Application.Common.Constants;
+global using Advertise.Application.Common.Exceptions;
+global using Advertise.Application.Common.Interfaces.Persistence.Repositories;
+global using Advertise.Application.Common.Interfaces.Persistence.UoW;
+global using Advertise.Application.Common.Interfaces.Services;
+global using Advertise.Application.Common.Mapping;
+global using Advertise.Application.Common.Models;
+global using Advertise.Application.Common.Utilities;
+global using Advertise.Application.Dtos.AdminAdvertises;
+global using Advertise.Application.Dtos.NutritionistBannerAdvertise;
+global using Advertise.Domain.Aggregates.AdminAdvertiseAggregate;
+global using Advertise.Domain.Aggregates.NutritionistBannerAdvertiseAggregate;
+global using Advertise.Domain.Common;
+global using Advertise.Domain.Enums;
+global using Advertise.Domain.ValueObjects;
+global using AutoMapper;
+global using Common.Enums;
+global using FluentValidation;
+global using MediatR;
+global using MediatR.Pipeline;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Logging;
+global using MongoDB.Bson;
+global using MongoDB.Driver;

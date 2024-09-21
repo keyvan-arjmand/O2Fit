@@ -1,0 +1,3 @@
+﻿namespace Identity.V2.Application.PermissionCategories.V1.Queries.GetCategoryPermissionByIdWithPermissions;
+
+public record GetPermissionCategoryByIdWithPermissionQuery(string PermissionCategoryId): IRequest<CategoryPermissionWithPermissionsDto>;

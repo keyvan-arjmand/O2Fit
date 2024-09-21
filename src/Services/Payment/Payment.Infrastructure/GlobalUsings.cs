@@ -1,0 +1,30 @@
+// Global using directives
+
+global using System.Collections;
+global using System.Linq.Expressions;
+global using System.Text;
+global using System.Text.Json;
+global using EventBus.Messages.Events;
+global using EventStore.Client;
+global using MediatR;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using MongoDB.Bson;
+global using MongoDB.Bson.Serialization;
+global using MongoDB.Bson.Serialization.Conventions;
+global using MongoDB.Bson.Serialization.Serializers;
+global using MongoDB.Driver;
+global using MongoDB.Driver.Linq;
+global using Newtonsoft.Json;
+global using Payment.Application.Common.Interfaces.Persistence.Repositories;
+global using Payment.Application.Common.Interfaces.Persistence.UoW;
+global using Payment.Application.Common.Interfaces.Services;
+global using Payment.Application.Common.Models;
+global using Payment.Domain.Common;
+global using Payment.Infrastructure.Common;
+global using Payment.Infrastructure.Persistence;
+global using Payment.Infrastructure.Persistence.Repositories;
+global using Payment.Infrastructure.Persistence.UoW;
+global using Payment.Infrastructure.Services;
+global using StackExchange.Redis;
+global using DeleteResult = MongoDB.Driver.DeleteResult;

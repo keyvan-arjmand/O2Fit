@@ -1,0 +1,199 @@
+﻿@using Blogging.Service.Dtos
+@using Blogging.Domain.Entities.Blogs
+
+@{
+    ViewData["Title"] = "جستجو در دسته بندی";
+    Layout = "_LayoutBlog";
+    List<Category> cats = ViewBag.header;
+    List<BlogDto> blogs = ViewBag.blogCats;
+}
+
+@section MetaTags
+{
+    <meta name="robots" content="noindex, follow"/>
+    <meta property="og:locale" content="fa_IR"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="جستجو در @Html.Raw(ViewBag.rootName)"/>
+    <meta property="og:site_name" content="وبلاگ اکسیژن فیت"/>
+}
+
+@section header
+{
+
+    <div class="row blog-navbar" id="navbar">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="container">
+                <a class="navbar-brand d-inline-flex link-body-emphasis text-decoration-none" href="@Url.Action("index", "Home")">
+                    <img src="/Images/Landing/O2Fitweb.svg" alt="o2fitApp" width="100px">
+                </a>
+                <div id="burger-menu" class="d-md-block d-lg-none d-xl-none d-sm-block col-sm-6 col-6 " type="button"
+                     data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                     aria-label="Toggle navigation">
+                    <span></span>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav gap-lg-2 gap-md-0 gap-sm-0 text-nowrap">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="@Url.Action("Index", "Blog")" aria-current="page">صفحه اصلی</a>
+                        </li>
+                        @foreach (var i in cats)
+                        {
+                            if (i.SubCategories.Count > 0)
+                            {
+                                foreach (var sub in i.SubCategories)
+                                {
+                                    <li class="nav-item dropdown dropdown-hover">
+                                        <a class="nav-link dropdown-toggle nav-item-head" href="@Url.Action("BlogCategory", "Blog", new { id = @i.Id })">
+                                            @i.Title.Persian
+                                        </a>
+                                        <ul class="dropdown-menu text-end query-border" aria-labelledby="5555">
+                                            <li>
+                                                <a class="dropdown-item text-muted" href="@Url.Action("BlogSubCategory", "Blog", new { id = @sub.Id })">@sub.Title.Persian</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                }
+                            }
+                            else
+                            {
+                                <li class="nav-item ">
+                                    <a class="nav-link active text-decoration-none text-black" aria-current="page" href="@Url.Action("BlogCategory", "Blog", new { id = @i.Id })">@i.Title.Persian</a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                    <form asp-action="SearchBlog" asp-controller="Blog" class="d-flex justify-content-end justify-content-md-start justify-content-lg-start justify-content-sm-end w-100" dir="ltr">
+                        <div class="input-group md-form form-sm form-2 pl-0 w-75" style="max-width: 300px">
+                            <div class="input-group-append">
+                                <button type="submit" class="input-group-text red lighten-3 search-box" id="basic-text1">
+                                    <img src="/Images/Icons/search.png" alt="search" width="30"/>
+                                </button>
+                            </div>
+                            <input class="form-control my-0 py-1 search-border text-end" name="search" type="text" placeholder="جست وجو" style="  border-radius: 0px 5px 5px 0px;" aria-label="Search">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+
+}
+
+
+<div class="container-fluid container-md container-sm">
+    <div class="row">
+        <div class="col col-sm-12 col-md-12 col-lg-9 ">
+            <div class="row border rounded-2 p-4 m-4 search-blog-row">
+                <div class="col-12 text-center d-flex flex-column p-3 ">
+                    <h4 class="font-size-title-default">
+                        @ViewBag.rootName
+                    </h4>
+                    <h5 class="mt-2 " style="font-size: medium;font-weight: 300" id="sticky">
+                        @* @ViewBag.root *@
+                    </h5>
+                </div>
+            </div>
+            <div class="row" dir="rtl">
+                @{
+                    if (blogs.Count < 1)
+                    {
+                        <div class="col-12 mt-3">
+                            <h5 class="text-center font-size-title-default">مقاله ای یافت نشد</h5>
+                        </div>
+                    }
+
+                    foreach (var i in blogs)
+                    {
+                        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                            <div class="card p-0 m-auto mb-4 custom-card blog-card text-decoration-none">
+                                <div >
+                                    <a href="@Url.Action("BlogById", "Blog", new { id = @i.Id })" class="text-decoration-none">
+                                        <img class="bd-placeholder-img card-img-cat-top w-100 img-fluid blog-card-image" src="https://blog.o2fitt.com/blogimage/@i.ImageName" alt="@i.AltImage"/>
+
+                                    </a>
+                                    <div class="card-body card-text-screen text-end p-1 blog-card-body px-2">
+                                        <h5 class="card-cat-header mt-1">@i.Title.Persian</h5>
+                                        <p class="card-text text-overflow-cat-card">
+                                            @i.ShortDescription.Persian
+                                        </p>
+                                        <div class="d-flex justify-content-between align-items-center mx-2">
+                                            <small class="text-body-secondary" style="font-size: x-small;">نویسنده:مهدی الهی</small>
+                                            <small class="text-body-secondary" style="font-size: x-small;">@i.InsertDate</small>
+                                        </div>
+                                        <div class="border-top mt-2 mx-auto w-100">
+                                            <div class="d-flex justify-content-between align-items-center  px-2 py-2">
+                                                <div class="text-body-secondary mt-1 d-flex justify-content-start gap-2">
+                                                    <a class="text-decoration-none" href="https://telegram.me/share/url?url=https://blog.o2fitt.com/Blog/BlogById/@i.Id&text=@i.Title.Persian">
+                                                        <img src="/Images/Blog/telegram.svg" alt="telegram" width="25"/>
+                                                    </a>
+                                                    <a class="text-decoration-none" href="whatsapp://send?text=https://blog.o2fitt.com/Blog/BlogById/@i.Id">
+                                                        <img src="/Images/Blog/social.png" alt="whatsapp" width="25"/>
+                                                    </a>
+                                                </div>
+                                                <div>
+                                                    <form class="d-flex justify-content-center align-items-center like-blog">
+                                                        <a class="text-body-secondary text-decoration-none like-blog" type="button">
+                                                            <img class="like-image" src="/Images/Icons/heart-empty.png" alt="like" width="20"/>
+                                                        </a>
+                                                        <input name="blogLike" value="@i.Like" class="border-0 bg-transparent like-input" size="@i.Like.ToString().Length" readonly="readonly" disabled="disabled"/>
+                                                        <input name="blogId" value="@i.Id" disabled="disabled" hidden="hidden"/>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+
+            </div>
+        </div>
+        <div class="col-lg-3 d-none  d-sm-none d-md-none d-lg-block mt-3" id="banner" style="height: 100vh">
+            <div class="d-flex flex-column align-content-center">
+                <img src="/Images/Blog/O2fit-banner.jpg" alt="o2FitApp" style="height: fit-content" class="w-100 rounded-2"/>
+                <h4 class="text-center mt-2 pt-2 font-size-title-default">دانلود اپلیکیشن</h4>
+                <div class="d-flex align-items-center justify-content-center  flex-wrap mt-3 gap-2">
+                    <a href="/DownloadApp" target="_blank" class="float-md-left">
+                        <img src="/Images/Landing/o2fit-direct-download.png" alt="Download direct" class="Downloadbtn" width="125">
+                    </a>
+                    <a href="https://apps.apple.com/us/app/o2fit-diet-calorie-counter/id1556681170" target="_blank" class="float-md-left">
+                        <img src="/Images/Landing/o2fit-app-store-fa.png" alt="apple store" class="Downloadbtn" width="125">
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.o2fitt&hl=fa&gl=ir" target="_blank" class="float-md-left">
+                        <img src="/Images/Landing/play-store-fa.png" class="Downloadbtn" alt="google play" width="125">
+                    </a>
+                    <a class="float-md-left" target="_blank" href="https://myket.ir/app/com.o2fitt?utm_source=search-ads-gift&utm_medium=cpc">
+                        <img class="Downloadbtn" src="https://myket.ir/core/images/logo/get1-fa.png" alt="myket" width="125"/>
+                    </a>
+                    <a class="float-md-left" target="_blank" href="https://cafebazaar.ir/app/com.o2fitt">
+                        <img class="Downloadbtn" src="/Images/Landing/badge-new.png" alt="cafebazaar" width="125"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script{
+    <script>
+    window.addEventListener("scroll", function () {
+        sideScroll();
+    }, false);
+    window.onscroll = function() {sideScroll()};
+    
+    var header = document.getElementById("banner");
+    var sticky = header.offsetTop;
+    
+    function sideScroll() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky-cat");
+      } else {
+        header.classList.remove("sticky-cat");
+      }
+    }
+    </script>
+}

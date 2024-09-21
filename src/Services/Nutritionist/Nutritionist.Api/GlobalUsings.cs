@@ -1,0 +1,37 @@
+﻿// Global using directives
+
+global using System.Net;
+global using System.Security.Claims;
+global using System.Text;
+global using AutoMapper;
+global using Common.Constants.Identity;
+global using Common.Enums;
+global using FluentValidation.AspNetCore;
+global using MassTransit;
+global using MediatR;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Mvc.Authorization;
+global using Microsoft.AspNetCore.Mvc.Filters;
+global using Microsoft.AspNetCore.Mvc.ModelBinding;
+global using Microsoft.Extensions.Options;
+global using Microsoft.IdentityModel.Tokens;
+global using Microsoft.OpenApi.Models;
+global using MongoDB.Bson;
+global using Nutritionist.Api;
+global using Nutritionist.Api.Filters;
+global using Nutritionist.Api.Permission;
+global using Nutritionist.Api.Services;
+global using Nutritionist.Application;
+global using Nutritionist.Application.Common.ApiResult;
+global using Nutritionist.Application.Common.Exceptions;
+global using Nutritionist.Application.Common.Interfaces.Services;
+global using Nutritionist.Application.Common.Mapping;
+global using Nutritionist.Application.Common.Models;
+global using Nutritionist.Application.Common.Utilities;
+global using Nutritionist.Application.Dtos.NutritionistOrders;
+global using Nutritionist.Application.NutritionistOrders.V1.Queries.GetNutritionistOrdersPaginated;
+global using Nutritionist.Domain.Common;
+global using Nutritionist.Infrastructure;
+global using OpenIddict.Validation.AspNetCore;
+global using Swashbuckle.AspNetCore.SwaggerGen;

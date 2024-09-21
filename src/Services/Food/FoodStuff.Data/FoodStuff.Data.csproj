@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20201017183046_UserTrackPersonalFood.cs" />
+    <Compile Remove="Migrations\20201017183046_UserTrackPersonalFood.Designer.cs" />
+    <Compile Remove="Migrations\20201017183912_checkpersonalfood2.cs" />
+    <Compile Remove="Migrations\20201017183912_checkpersonalfood2.Designer.cs" />
+    <Compile Remove="Migrations\20201106111428_AddTranslationRelationInFood.cs" />
+    <Compile Remove="Migrations\20201106111428_AddTranslationRelationInFood.Designer.cs" />
+    <Compile Remove="Migrations\20201113045208_EditPropPersonalFood.cs" />
+    <Compile Remove="Migrations\20201113045208_EditPropPersonalFood.Designer.cs" />
+    <Compile Remove="Migrations\20201113050119_EditPropPersonalFood.cs" />
+    <Compile Remove="Migrations\20201113050119_EditPropPersonalFood.Designer.cs" />
+    <Compile Remove="Migrations\20201113052357_EditPropPersonalFood.cs" />
+    <Compile Remove="Migrations\20201113052357_EditPropPersonalFood.Designer.cs" />
+    <Compile Remove="Migrations\20201113052715_EditPropPersonalFood.cs" />
+    <Compile Remove="Migrations\20201113052715_EditPropPersonalFood.Designer.cs" />
+    <Compile Remove="Migrations\20201128090639_AddExcelTable.cs" />
+    <Compile Remove="Migrations\20201128090639_AddExcelTable.Designer.cs" />
+    <Compile Remove="Migrations\20230608082159_ChangeTypeOfRelationShipOfFoodAndRecipeTables.cs" />
+    <Compile Remove="Migrations\20230608082159_ChangeTypeOfRelationShipOfFoodAndRecipeTables.Designer.cs" />
+    <Compile Remove="Migrations\20230608082855_ChangeTypeOfRelationShipOfFoodAndRecipeTables.cs" />
+    <Compile Remove="Migrations\20230608082855_ChangeTypeOfRelationShipOfFoodAndRecipeTables.Designer.cs" />
+    <Compile Remove="Migrations\20230608083432_FixrelationShip.cs" />
+    <Compile Remove="Migrations\20230608083432_FixrelationShip.Designer.cs" />
+    <Compile Remove="Migrations\20230611081202_MakeFoodIdRequiedInRecipeTable.cs" />
+    <Compile Remove="Migrations\20230611081202_MakeFoodIdRequiedInRecipeTable.Designer.cs" />
+    <Compile Remove="Migrations\20230613093149_AddIndexToFoodAndUserTrackWaterAndUserTrackFood.cs" />
+    <Compile Remove="Migrations\20230613093149_AddIndexToFoodAndUserTrackWaterAndUserTrackFood.Designer.cs" />
+    <Compile Remove="Migrations\20230613114449_MakeRecipeCategoryNullableInFoodTable.cs" />
+    <Compile Remove="Migrations\20230613114449_MakeRecipeCategoryNullableInFoodTable.Designer.cs" />
+    <Compile Remove="Migrations\20230614081109_AddIndexToUserTrackFood.cs" />
+    <Compile Remove="Migrations\20230614081109_AddIndexToUserTrackFood.Designer.cs" />
+    <Compile Remove="Migrations\20230614081305_AddIndexToUserTrackFood.cs" />
+    <Compile Remove="Migrations\20230614081305_AddIndexToUserTrackFood.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.78" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.9" />
+    <PackageReference Include="MongoDB.Driver" Version="2.19.1" />
+    <PackageReference Include="MongoDB.Driver.Core" Version="2.19.1" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.4" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FoodStuff.Domain\FoodStuff.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

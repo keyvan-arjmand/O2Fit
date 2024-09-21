@@ -1,0 +1,25 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+            @if (ViewBag.ErrorBank != null)
+            {
+                <p>@ViewBag.ErrorBank</p>
+            }
+            else
+            {
+                <form id="PostForm" name="PostForm" action="@ViewBag.BankUrl" method="post">
+                    <input type="hidden" name="RefId" value="@ViewBag.RefId" />
+                </form>
+                <p>در حال اتصال به درگاه بانک</p>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("#PostForm").submit();
+        });
+    </script>
+}

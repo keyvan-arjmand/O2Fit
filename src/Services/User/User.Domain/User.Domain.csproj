@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Entities\Formula\**" />
+    <Compile Remove="Filter\**" />
+    <EmbeddedResource Remove="Entities\Formula\**" />
+    <EmbeddedResource Remove="Filter\**" />
+    <None Remove="Entities\Formula\**" />
+    <None Remove="Filter\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="3.1.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\User.Common\User.Common.csproj" />
+  </ItemGroup>
+
+</Project>

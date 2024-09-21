@@ -1,0 +1,348 @@
+@import url(fontiran.css); /* لینک فایلی که وظیفه بارگذاری فونت ها را برعهده دارد */
+body {
+    font-family: iranyekan !important;
+    direction: rtl;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, input, textarea {
+    font-family: iranyekan !important;
+}
+
+#burger-menu {
+    cursor: pointer;
+    height: 27px;
+    width: 27px;
+    overflow: visible;
+    position: relative;
+    z-index: 9;
+
+    span,
+    span:before,
+    span:after {
+        background: black;
+        display: block;
+        height: 2px;
+        opacity: 1;
+        position: absolute;
+        transition: 0.3s ease-in-out;
+    }
+
+    span:before,
+    span:after {
+        content: '';
+    }
+
+    span:before {
+        left: 0px;
+        top: -10px;
+        width: 27px;
+    }
+
+    span {
+        right: 0px;
+        top: 13px;
+        width: 27px;
+    }
+
+    span:after {
+        left: 0px;
+        top: 10px;
+        width: 27px;
+    }
+
+    &.close {
+        span:before {
+            top: 0px;
+            transform: rotate(90deg);
+            width: 27px;
+            background: white !important;
+        }
+
+        span {
+            transform: rotate(-45deg);
+            top: 13px;
+            width: 27px;
+            background: white !important;
+        }
+
+        span:after {
+            top: 0px;
+            left: 0;
+            transform: rotate(90deg);
+            opacity: 0;
+            width: 0;
+
+        }
+    }
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #FF8F0C;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/*#myBtn:hover {*/
+/*    background-color: #e0e0e0;*/
+/*}*/
+
+/*#top-btn:hover {*/
+/*    fill: #FF8F0C !important;*/
+/*    color: #FF8F0C !important;*/
+/*}*/
+#menu-mobile {
+    z-index: 7;
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+    padding-top: 20px;
+    transition: all 0.3s ease-in-out;
+
+    &.overlay {
+        visibility: visible;
+        opacity: 1;
+        padding-top: 100px;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    ul {
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        color: #fff;
+        display: block;
+        font-size: 32px;
+        margin-bottom: 30px;
+        text-decoration: none;
+    }
+}
+.detail-card{
+    background-color: #fdfdfd;
+}
+.detail-card:hover{
+    background-color: rgb(228, 239, 249);
+}
+.card-hover {
+    background-color: #F1F7FB;
+}
+
+.card-hover:hover {
+    background-color: #fdfdfd;
+}
+
+.card-text-overflow {
+    max-width: 210px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.border.border-light:hover {
+    background-color: aliceblue
+}
+
+.card {
+    position: relative;
+    border: none 0px;
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: fit-content;
+}
+.card-img-cat-top {
+    object-fit: cover;
+    height: 150px;
+}
+.card-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5px;
+    text-align: center;
+
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+}
+.sticky-detail{
+    position: sticky;
+    top: 0;
+}
+.sticky-card{
+    padding: 0.25rem !important;
+}
+#search-box-header {
+    border-left: none !important;
+    box-shadow: none !important;
+    border-color: #dee2e6 !important;
+}
+
+.card:hover .card-img-top {
+    background-color: #f8f9fa;
+}
+
+.card {
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition: background-color 0.3s ease-out;
+}
+
+.overlay:hover {
+    background-color: #949393;
+    opacity: 70%;
+}
+.card-cat-header{
+    font-size: medium;
+    font-weight: 400;
+}
+.card-body {
+    z-index: 1;
+    width: fit-content;
+}
+.card-title{
+    font-size: large;
+}
+.text-overflow-side-slider{
+    text-overflow: ellipsis;
+    width: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    direction: rtl;
+}
+.card-text{
+    font-size: small !important;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.text-overflow-cat-card{
+    text-overflow: ellipsis;
+    width: auto;
+    overflow: hidden;
+    text-wrap: normal;
+    height: 60px;
+    direction: rtl;
+}
+@media screen and (min-width: 994px) and (max-width: 1200px) {
+    .image-slider-media {
+        height: 25em !important;
+    }
+}
+.content-nav {
+    position: relative;
+    overflow: hidden;
+    align-content: center;
+}
+
+.content-nav h5 {
+    width: 100%;
+    display: none;
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.content-nav h5.active {
+    display: block;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes slideIn {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.custom-card {
+    transition: box-shadow 0.4s;
+}
+
+.custom-card:hover {
+    box-shadow: 5px 5px 25px 0px rgba(0,0,0,0.2);
+}
+
+.custom-card:hover  {
+    transform: scale(1.009);
+    transition: transform 0.4s;
+}
+.swiper-slide{
+
+    width: 40% !important;
+}
+.swiper-slide-card{
+    width: 40% !important;
+}
+root{
+    --o2fit:#FF8F0C;
+}
+.category-card {
+    transition: background-color 0.5s ease-out ;
+    border:3px dashed #BBBBBB
+}
+
+.category-card:hover {
+    background-color: #ffa100;
+    border: 0 none ;
+}
+/*.category-slider {*/
+/*    transition: background-color 0.5s ease-out ;*/
+/*    gap: 5px;*/
+/*}*/
+
+.category-slider:hover {
+    /*background-color: #ffa100;*/
+}
+.swiper {
+    width: 100%;
+    height: 110px;
+}
+.swiper {
+    width: 100%;
+    height: 110px;
+}

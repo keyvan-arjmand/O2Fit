@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+option csharp_namespace = "Currency.Grpc";
+
+package greet;
+
+service Exchangers {
+  rpc ExchangerCurrencies (ExchangerRequest) returns (ExchangerResponse);
+  rpc ExchangerCurrencyToDollar (ExchangerToDollarRequest) returns (ExchangerToDollarResponse);
+  rpc GetCurrencyByName (CurrencyByNameRequest) returns (CurrencyByNameResponse);
+  rpc GetCurrencyByCountryId (CurrencyByCountryIdRequest) returns (CurrencyByCountryIdResponse);
+}
+
+message ExchangerRequest {
+ string SourceCurrencyName=1;
+ double SourceCurrencyAmount=2;
+ string DestinationCurrencyName=3;
+}
+message ExchangerResponse {
+ string SourceCurrencyName=1;
+ double SourceCurrencyAmount=2;
+ string DestinationCurrencyName=3;
+ double DestinationCurrencyAmount=4;
+}
+
+message ExchangerToDollarRequest {
+ string CurrencyName=1;
+ double CurrencyAmount=2;
+ }
+
+message ExchangerToDollarResponse {
+ string SourceCurrencyName=1;
+ double SourceCurrencyAmount=2;
+ string DestinationCurrencyName=3;
+ double DestinationCurrencyAmount=4;
+ }
+
+message CurrencyByNameRequest{
+ string Name=1;
+ } 
+
+message CurrencyByNameResponse{
+ string Id=1;
+ string CurrencyName=2;
+ string CurrencyCode=3;
+ int32 CountryCode=4;
+ int32 CountryId=5;
+ double CoefficientCurrency=6;
+ string Alpha=7;
+ } 
+
+ message CurrencyByCountryIdRequest{
+ int32 CountryId=1;
+ } 
+
+message CurrencyByCountryIdResponse{
+ string Id=1;
+ string CurrencyName=2;
+ string CurrencyCode=3;
+ int32 CountryCode=4;
+ int32 CountryId=5;
+ double CoefficientCurrency=6;
+ string Alpha=7;
+ } 

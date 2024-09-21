@@ -1,0 +1,1031 @@
+﻿@using Blogging.Domain.Entities.Blogs
+@{
+    Layout = "_Layout";
+    List<Blog> blogs = ViewBag.LastBlog;
+}
+
+@section MetaTags
+{
+    <meta name="description" content="اکسیژن فیت برنامه سبک زندگیت | برنامه اکسیژن فیت کمک میکنه به وزن دلخواه و تناسب اندام برسین "/>
+    <link rel="canonical" href="https://o2fitt.com/"/>
+    <meta property="og:locale" content="fa_IR"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="اکسیژن فیت | کالری شمار ، رژیم غذایی و تناسب اندام"/>
+    <meta property="og:description" content="اکسیژن فیت برنامه سبک زندگیت | برنامه اکسیژن فیت کمک میکنه به وزن دلخواه و تناسب اندام برسین "/>
+    <meta property="og:url" content="https://o2fitt.com/"/>
+    <meta property="og:site_name" content="اکسیژن فیت"/>
+    <meta property="og:image" content="https://webtest.o2fit.ir/Images/Landing/O2Fitweb.svg"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="760"/>
+    <meta property="og:image:type" content="image/jpeg"/>
+}
+
+@section link
+{
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="/poliz/css/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="/poliz/css/owl.theme.default.min.css"/>
+    <link rel="stylesheet" href="/poliz/css/style.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+
+}
+
+<div class="container ">
+
+<div class="row mt-4 p-3 mb-3 " id="HomePage">
+    <div class="col-lg-7 col-sm-12 col-md-12" id="sticky">
+        <div class="p-md-3 p-lg-3 ps-md-0 mt-lg-5 me-sm-1 me-md-1 me-lg-0">
+            <div class="p-1">
+                <h1 class="pe-sm-0 pe-md-0 pe-lg-2 text-end me-md-1 me-sm-1 p-1 me-lg-0 o2-text-color font-size-title top-o2-font mobile-font-size-title wow animate__animated animate__fadeInDown">
+                    با اکسیژن فیت
+                </h1>
+                <h5 class="p-md-2 p-lg-2 p-sm-0 text-md-end text-lg-end text-sm-end  top-landing-font-x-larger mobile-font-size-paragraph  wow animate__animated animate__fadeInDown ">
+                    خوشمزه به تناسب اندام برس!
+                </h5>
+            </div>
+            <div class="p-1">
+                <p class="p-md-2 p-lg-2 p-sm-0 text-md-end text-lg-end text-sm-end mb-0  top-landing-font-larger mobile-font-size-paragraph wow animate__animated animate__fadeInUp ">
+                    تغذیه سالم یک کلیده برای رسیدن به حال خوب همیشگی
+                </p>
+                <p class="p-md-2 p-lg-2 p-sm-0 text-md-end text-lg-end text-sm-end mobile-font-size-paragraph  top-landing-font-larger wow animate__animated animate__fadeInUp ">
+                    همین الان اکسیژن فیت رو نصب کن و شروع کن
+                </p>
+            </div>
+            <div
+                class="d-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-start flex-wrap gap-md-2 gap-lg-2 gap-sm-3 gap-3 ">
+                <a href="https://apps.apple.com/us/app/o2fit-diet-calorie-counter/id1556681170" target="_blank">
+                    <img src="~/Images/landing/App-Store.png" alt="appStore" width="250"/>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.o2fitt&hl=fa&gl=ir" target="_blank">
+                    <img src="~/Images/landing/google-Store.png" alt="playStore" width="250"/>
+                </a>
+                <a href="/DownloadApp" target="_blank">
+                    <img src="~/Images/landing/direct.png" alt="direct" width="250" class=""/>
+                </a>
+                <a href="https://cafebazaar.ir/app/com.o2fitt" target="_blank">
+                    <img src="~/Images/landing/bazzar.png" alt="bazzar" width="250" class=""/>
+                </a>
+                <a href="https://myket.ir/app/com.o2fitt?utm_source=search-ads-gift&utm_medium=cpc" target="_blank">
+                    <img src="~/Images/landing/Play Store.png" alt="myket" width="250" class=""/>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-5  col-sm-12 col-md-12 mt-3 mt-sm-3 mt-md-0 mt-lg-0 first-banner">
+        <img class="w-100 object-fit-sm-cover object-fit-cover object-fit-md-contain object-fit-lg-cover" alt="o2fitApp" height="600" src="~/Images/landing/phone1.png"/>
+    </div>
+</div>
+
+<div class="row mt-lg-5 mt-md-1 mt-sm-1  p-1 pt-lg-5 pt-md-1 pt-sm-1 ">
+    <div class="d-none d-sm-none d-lg-block d-sm-block col-lg-5">
+        <img src="~/Images/landing/side-img.png" width="100%" class="wow animate__animated animate__fadeIn"/>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-7  pe-5 mt-5 ">
+        <div class="pe-lg-5 pe-sm-0 pe-md-0">
+            <h5 class="mb-3 wow animate__animated animate__fadeInDown mobile-font-size-title font-size-title">
+                موفقیت حدود <span class="o2-text-color">۱ میلیون</span> کاربر
+            </h5>
+            <h5 class="wow animate__animated animate__fadeInDown font-size-title mobile-font-size-paragraph">
+                بقیه تونستن به هدف برسن چرا تو نتونی!
+            </h5>
+
+        </div>
+        <div class="row mt-5 p-2 pe-lg-0 pe-sm-0 pe-md-0  ">
+            <div class="d-flex flex-column  justify-content-end  col-md-6 col-lg-6 col-sm-12 p-3">
+                <div
+                    class="d-flex  justify-content-sm-start justify-content-md-start justify-content-lg-start  gap-2 align-items-center wow animate__animated animate__slideInUp">
+                    <span class="mb-15p">
+                        <img class=" " src="~/Images/landing/download-svgrepo-com.png" alt="o2fit User"
+                             width="25"/>
+                    </span>
+                    <h5 class="font-size-desc mobile-font-size-paragraph">
+                        تعداد کاربران
+                    </h5>
+                </div>
+                <h5 class="wow animate__animated animate__slideInUp font-size-title mobile-font-size-title">
+                    <span data-toggle="counter-up" class="counter number" id="a">
+                        + 900/000
+                    </span>کاربر
+                </h5>
+            </div>
+            <div class="d-flex flex-column col-md-6 col-lg-6 col-sm-12  p-3 ">
+                <div
+                    class="d-flex justify-content-sm-start justify-content-md-start justify-content-lg-start gap-2 align-items-center wow animate__animated animate__slideInUp">
+                    <span class="mb-15p">
+                        <img src="~/Images/landing/scale-left.png" alt="Weight Loss"
+                             width="20"/>
+                    </span>
+                    <h5 class="font-size-desc mobile-font-size-paragraph">
+                        کاهش وزن یا لاغری
+                    </h5>
+                </div>
+                <h5 class="number wow animate__animated animate__slideInUp font-size-title mobile-font-size-title">
+                    <span data-toggle="counter-up" class="counter number" id="b">2/500/000 +</span>
+                    کیلوگرم
+                </h5>
+            </div>
+            <div class="d-flex flex-column col-md-6 col-lg-6 col-sm-12 p-3">
+                <div
+                    class="d-flex justify-content-sm-start justify-content-md-start justify-content-lg-start gap-2 align-items-center wow animate__animated animate__slideInUp" data-wow-duration="1s">
+                    <span class="mb-5p">
+                        <img src="~/Images/landing/Group 3773.png" alt="Diet" width="20"/>
+                    </span>
+                    <h5 class="font-size-desc mobile-font-size-paragraph">
+                        برنامه رژیم غذایی
+                    </h5>
+                </div>
+                <h5 class="number wow animate__animated animate__slideInUp font-size-title mobile-font-size-title">
+                    <span data-toggle="counter-up" class="counter number " id="c">150/000 +</span>
+                    موفق
+                </h5>
+            </div>
+            <div class="d-flex flex-column col-md-6 col-lg-6 col-sm-12  p-3 ">
+                <div
+                    class="d-flex justify-content-sm-start justify-content-md-start gap-2 justify-content-lg-start align-items-center wow animate__animated animate__slideInUp">
+                    <span class="mb-10p">
+                        <img src="~/Images/landing/scale-light1-line-svgrepo-com.png" alt="Weight Gain" width="25"/>
+                    </span>
+                    <h5 class="font-size-desc mobile-font-size-paragraph">
+                        افزایش وزن
+
+                    </h5>
+                </div>
+                <h5 class="number wow animate__animated animate__slideInUp font-size-title mobile-font-size-title" data-wow-duration="1s"><span data-toggle="counter-up" class="counter number" id="d">100/000 +</span>کیلوگرم </h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mt-lg-5 mt-md-1 mt-sm-1  p-1 pt-lg-5 pt-md-1 pt-sm-1" id="AboutApp">
+    <div class="col-sm-12 col-md-12 col-lg-6 ">
+        <div class="d-flex flex-column align-content-between justify-content-between h-100 ">
+            <div class="mb-3 p-3 ">
+                <h5 class="wow animate__animated video-title mobile-font-size-title">
+                    رو <span class="o2-text-color">اکسیژن فیت</span> حساب کن
+                </h5>
+                <h5 class="mt-3 wow animate__animated animate__fadeIn video-desc desc-text-size">
+                    اکسیژن فیت یک برنامه است که با کمک خلاقیت و امکانات اختصاصی مثل کالری شماری دقیق، آنالیز دقیق بدن، میکرو و
+                    ماکرو شماری، برنامه رژیم غذایی و غیره مسیر سلامتی و تناسب اندام شما رو برنامه ریزی میکنه تا راحت و اصولی
+                    به وزن دلخواهت برسی
+                </h5>
+            </div>
+            <div class="pb-2 pt-md-2 pt-lg-2 pt-sm-1 text-end ps-4">
+                <a type="button" id="open-modal2"
+                   class="O2-bg-color rounded-3 text-center align-self-center p-2 text-decoration-none text-white wow animate__animated animate__fadeIn fs-large mobile-font-size-paragraph">
+                    مشاهده ویدیو
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <a type="button" id="open-modal" class="col-sm-12 col-md-12 col-lg-6 pt-sm-4 pt-md-0 pt-lg-0 pt-4 position-relative wow animate__animated animate__slideInLeft">
+        <img class="" width="100%" alt="o2Fit Video" src="~/Images/landing/Video.png"/>
+        <div class="video-container">
+            <div class="video-banner circle pulse">
+                <img id="ArowVideo" width="70" class="p-2" src="Images/Landing/ArowVideo.png" alt="player"/>
+            </div>
+        </div>
+    </a>
+
+</div>
+<div class="row mt-lg-5 mt-md-3 mt-sm-3  p-1 pt-3  pt-lg-5 pt-md-2 pt-sm-2 " id="Attributes">
+    <div class="col-12  mb-3 pb-5">
+        <h5 class="wow animate__animated animate__fadeIn video-title mobile-font-size-paragraph">
+            ویژگی اختصاصی <span class="o2-text-color">اکسیژن فیت</span>
+        </h5>
+        <h5 class="wow animate__animated animate__fadeIn attributes-title mt-3 pt-2 desc-text-size">
+            مزیت های اکسیژن فیت بهت کمک میکنه حتما به اندام ایه آل و وزن
+            دلخواهت برسی
+        </h5>
+    </div>
+    <div class="d-none d-md-block d-sm-none d-lg-none  col-md-1 "></div>
+    <div class="d-block  d-sm-block d-md-block d-lg-none col-md-10 col-sm-12 mb-3 wow animate__animated animate__fadeIn">
+        <video width="100%" loop="" autoplay="" muted="">
+            <source src="Videos/O2Fit.mp4" type="video/mp4"/>
+        </video>
+    </div>
+    <div class="d-none d-md-block d-sm-none d-lg-none  col-md-1 "></div>
+    <div class="col-sm-12 col-md-12 col-lg-4 ">
+        <div class="d-flex flex-column  align-content-evenly gap-lg-4  ">
+            <div class="d-flex flex-column   align-content-center p- ">
+                <div class="d-flex justify-content-start align-items-center p-2 gap-2 mb-1 px-3 wow animate__animated animate__fadeInRight attributes-img">
+                    <img src="~/Images/landing/calorie icon.png" alt="calorie counting"/>
+                    <h5 class="attributes-text">
+                        کالری شماری دقیق
+                    </h5>
+                </div>
+                <p class="p-lg-2 wow animate__animated animate__fadeIn desc-text-size">
+                    متناسب با فیزیک بدن شما و وزن دلخواهتون کالری هدف روزانه برنامه ریزی میشه و برای اولین بار در جهان ارزش
+                    غذایی تمام غذاها بر اساس مواد تشکیل دهنده غذا، نوع و زمان پخت غذا محاسبه میشه
+                </p>
+            </div>
+            <div class="d-flex flex-column  align-content-center p-2 ">
+                <div class="d-flex justify-content-start align-items-center p-2 gap-2 mb-1 px-3 wow animate__animated animate__fadeInRight attributes-img">
+                    <img src="~/Images/landing/Path 8538.png" alt="diet"/>
+                    <h5 class="attributes-text">
+                        رژیم غذایی
+                    </h5>
+                </div>
+                <p class="p-lg-2 wow animate__animated animate__fadeIn desc-text-size">
+                    برنامه غذایی عادی، گیاه خواری، وگان و غیره متناسب با سفره و نیاز بدن به همراه حداقل 40 پکیج جایگزین و
+                    مدیریت وعده آزاد
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="d-none d-md-none d-lg-block  col-lg-4 wow animate__animated animate__fadeIn">
+        <video width="100%" loop="" autoplay="" muted="">
+            <source src="Videos/O2Fit.mp4" type="video/mp4"/>
+        </video>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-4 ">
+        <div class="d-flex flex-column  align-content-evenly gap-lg-5 ">
+            <div class="d-flex flex-column align-content-center p-2 ">
+                <div class="d-flex justify-content-start align-items-center p-2 gap-2 mb-1 px-3 wow animate__animated animate__fadeInLeft attributes-img">
+                    <img src="~/Images/landing/Path 12204.png" alt="analysis of the body"/>
+                    <h5 class="attributes-text">
+                        آنالیز دقیق بدن
+                    </h5>
+                </div>
+                <p class="p-lg-2 wow animate__animated animate__fadeIn desc-text-size">
+                    آنالیز بدن بسیار مهمه و اکسیژن فیت بهت میگه تیپ و شکل بدنت چیه و در معرض چه بیماری هایی هستی یا چه ورزش
+                    ها و غذایی برات مفید یا مضره
+                </p>
+            </div>
+            <div class="d-flex flex-column align-content-center p-2 ">
+                <div class="d-flex justify-content-start align-items-center p-2 gap-2 mb-1 px-3 wow animate__animated animate__fadeInLeft attributes-img">
+                    <img src="~/Images/landing/Path 12205.png" alt="Micro counting"/>
+                    <h5 class="attributes-text">
+                        میکرو و ماکروشماری دقیق
+                    </h5>
+                </div>
+                <p class="p-lg-2 wow animate__animated animate__fadeIn desc-text-size">
+                    اکسیژن فیت متناسب با تیپ بدنی هر شخص بودجه روزانه درشت مغذی ها و ریز مغذی ها (مثل آهن، ویتامین ها و
+                    غیره) رو مشخص میکنه
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mt-lg-5 mt-md-4 mt-sm-4  p-2 pt-5  pt-lg-5 pt-md-4 pt-sm-4 " id="Services">
+    <div class="pe-lg-5 pe-sm-0 pe-md-0">
+        <h5 class="mb-3 font-size-title mobile-font-size-title">
+            سایر خدمات <span class="o2-text-color">اکسیژن فیت</span>
+        </h5>
+    </div>
+</div>
+</div>
+<div class="row bg-color-service">
+    <div class="container">
+        <div class="p-4">
+            <div class="swiper-container overflow-hidden swiper-services" id="swiper-1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="card text-center service-card">
+                            <div class="service-img">
+                                <img class="card-img-top img-service" src="/Images/landing/mySvg.png" alt="آنالیز روزانه">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title p-1 ">آنالیز روزانه و وعده</h5>
+                                <p class="card-text p-1 card-services ">
+                                    اکسیژن فیت کل ارزش غذایی و کالری غذاهایی که در طی روز ثبت میکنی رو به نسبت بودجه مجاز روزانه محاسبه
+                                    و بررسی میکنه و اینجوری میتونی عملکرد روزانه رو کنترل کنی
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card text-center service-card">
+                            <div class="service-img">
+                                <img class="card-img-top img-service" src="/Images/landing/mySvg.png" alt="آنالیز روزانه">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title p-1 ">آنالیز روزانه و وعده</h5>
+                                <p class="card-text p-1 card-services ">
+                                    اکسیژن فیت کل ارزش غذایی و کالری غذاهایی که در طی روز ثبت میکنی رو به نسبت بودجه مجاز روزانه محاسبه
+                                    و بررسی میکنه و اینجوری میتونی عملکرد روزانه رو کنترل کنی
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card text-center service-card">
+                            <div class="service-img">
+                                <img class="card-img-top img-service" src="/Images/landing/Shoeicon.png" alt="قدم شمار">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title p-1 ">قدم شمار</h5>
+                                <p class="card-text p-1 card-services ">
+                                    اکسیژن فیت قدم هایی که برمیدارین رو میشماره و متناسب با وزن بدنتون کالری سوزانده شده پیاده روی رو
+                                    براتون حساب میکنه
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card text-center service-card">
+                            <div class="service-img">
+                                <img class="card-img-top img-service" src="/Images/landing/o2fit-recipe.png" alt="غذاساز حرفه ای">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title p-1 ">غذاساز حرفه ای</h5>
+                                <p class="card-text p-1 card-services ">
+                                    امکان ترکیب مواد اولیه غذایی به همراه نوع زمان و پخت اون در دسترس شما هست تا براحتی بتونید این مواد
+                                    رو با هم ترکیب کنید. کالری و ارزش های غذایی اون غذاها بصورت اتوماتیک محاسبه شده و در اختیارتون قرار
+                                    میگیره
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<div class="container " id="Faq">
+<div class="row   mt-lg-3 mt-md-2 mt-sm-2  p-1 pt-3  pt-lg-3 pt-md-2 pt-sm-2">
+    <div class="pe-lg-5 pe-sm-0 pe-md-0 pt-lg-5 pt-md-4 pt-sm-3 d-flex justify-content-between align-items-center">
+        <h5 class="mb-3 font-size-title mobile-font-size-paragraph">
+            سوالات شما درباره<span class="o2-text-color"> اکسیژن فیت</span>
+        </h5>
+        <div class="text-end pb-2 ">
+            <a href="@Url.Action("FAQ", "Home")"
+               class="O2-bg-color text-nowrap rounded-3 text-center align-self-center p-2 text-decoration-none text-white wow animate__animated animate__fadeIn font-size-small text-decoration-none">
+                مشاهده همه
+            </a>
+        </div>
+    </div>
+
+</div>
+<div class="row mt-2 p-2 ">
+    <div class="accordion accordion-flush " id="accordionFlushExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed text-end fw-bold font-size-large" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    اکسیژن فیت برای من هم موثره؟
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne"
+                 data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body text-end desc-text-size">
+                    تا امروز کاربران بسیار زیادی با اکسیژن فیت نتیجه گرفتن؛ در واقع تا سال ۱۴۰2 حدود 1 میلیون و 50 هزار نفر
+                    از اکسیژن فیت استفاده کردند و این افراد در مجموع 2 میلیون و 600 هزار کیلوگرم وزن کم کردند. پس شما هم
+                    می‌تونید! ضمن اینکه برنامه اکسیژن فیت روش‌های متنوعی برای کاهش یا افزایش وزن داره؛ می‌تونید هر زمان که
+                    خواستید از رژیم کالری‌شماری و یا انواع رژیم‌های غذایی استفاده کنید.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed text-end fw-bold font-size-large" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    چرا بعد از پرداخت اشتراکم شارژ نشد؟
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                 data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body text-end desc-text-size">
+                    تا امروز کاربران بسیار زیادی با اکسیژن فیت نتیجه گرفتن؛ در واقع تا سال ۱۴۰2 حدود 1 میلیون و 50 هزار نفر
+                    از اکسیژن فیت استفاده کردند و این افراد در مجموع 2 میلیون و 600 هزار کیلوگرم وزن کم کردند. پس شما هم
+                    می‌تونید! ضمن اینکه برنامه اکسیژن فیت روش‌های متنوعی برای کاهش یا افزایش وزن داره؛ می‌تونید هر زمان که
+                    خواستید از رژیم کالری‌شماری و یا انواع رژیم‌های غذایی استفاده کنید.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed text-end fw-bold font-size-large" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    اکسیژن فیت چی کار میکنه؟ من آشنایی ندارم
+                </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                 data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body text-end desc-text-size">
+                    تا امروز کاربران بسیار زیادی با اکسیژن فیت نتیجه گرفتن؛ در واقع تا سال ۱۴۰2 حدود 1 میلیون و 50 هزار نفر
+                    از اکسیژن فیت استفاده کردند و این افراد در مجموع 2 میلیون و 600 هزار کیلوگرم وزن کم کردند. پس شما هم
+                    می‌تونید! ضمن اینکه برنامه اکسیژن فیت روش‌های متنوعی برای کاهش یا افزایش وزن داره؛ می‌تونید هر زمان که
+                    خواستید از رژیم کالری‌شماری و یا انواع رژیم‌های غذایی استفاده کنید.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row   mt-lg-5 mt-md-4 mt-sm-4  p-2 pt-4  pt-lg-4 pt-md-3 pt-sm-3">
+    <div class="pe-lg-5 pe-sm-0 pe-md-0 pt-lg-4 p-md-3 ps-sm-3 ">
+        <h5 class="mb-3 font-size-title mobile-font-size-title mobile-font-size-title">
+            تجربه شما با<span class="o2-text-color"> اکسیژن فیت</span>
+        </h5>
+    </div>
+</div>
+<div class="row text-center pt-2 p-2 pb-2 mb-1 ">
+<div class="d-none d-md-block d-lg-block  swiper featured-slider mb-5 " id="swiper-4">
+    <div class="swiper-wrapper p-3 ">
+        <div class="swiper-slide box category-slider p-2 ">
+            <div class="d-flex justify-content-center mb-4">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(22).webp" alt="testimonial"
+                     class="rounded-circle shadow-1-strong" width="100" height="100"/>
+            </div>
+            <p class="font-italic font-weight-normal mb-0" style=" font-weight: 600;">اکرم میرشکاری</p>
+            <div class="star-rate">
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+            </div>
+            <p class="my-3 p-2 desc-text-size">
+                با اکسیژن فیت موفق شدم ۶۲کیلو وزن کم کنم حتی ذره‌ای اذیت نشدم بلکه از رژیمم لذت بردم همه چی خوردم همه جا
+                رفتم بدون محدودیت
+            </p>
+        </div>
+        <div class="swiper-slide box category-slider  p-2 ">
+            <div class="d-flex justify-content-center mb-4">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(22).webp" alt="testimonial"
+                     class="rounded-circle shadow-1-strong" width="100" height="100"/>
+            </div>
+            <p class="font-italic font-weight-normal mb-0 " style=" font-weight: 600;">اکرم میرشکاری</p>
+            <div class="star-rate">
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+            </div>
+            <p class=" my-3 p-2 desc-text-size">
+                با اکسیژن فیت موفق شدم ۶۲کیلو وزن کم کنم حتی ذره‌ای اذیت نشدم بلکه از رژیمم لذت بردم همه چی خوردم همه جا
+                رفتم بدون محدودیت
+            </p>
+        </div>
+        <div class="swiper-slide box category-slider  p-2 ">
+            <div class="d-flex justify-content-center mb-4">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(22).webp" alt="testimonial"
+                     class="rounded-circle shadow-1-strong" width="100" height="100"/>
+            </div>
+            <p class="font-italic font-weight-normal mb-0" style=" font-weight: 600;">اکرم میرشکاری</p>
+            <div class="star-rate">
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+            </div>
+            <p class=" my-3 p-2 desc-text-size">
+                با اکسیژن فیت موفق شدم ۶۲کیلو وزن کم کنم حتی ذره‌ای اذیت نشدم بلکه از رژیمم لذت بردم همه چی خوردم همه جا
+                رفتم بدون محدودیت
+            </p>
+        </div>
+        <div class="swiper-slide box category-slider  p-2 ">
+            <div class="d-flex justify-content-center mb-4">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(22).webp" alt="testimonial"
+                     class="rounded-circle shadow-1-strong" width="100" height="100"/>
+            </div>
+            <p class="font-italic font-weight-normal mb-0" style=" font-weight: 600;">اکرم میرشکاری</p>
+            <div class="star-rate">
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+            </div>
+            <p class=" my-3 p-2 desc-text-size">
+                با اکسیژن فیت موفق شدم ۶۲کیلو وزن کم کنم حتی ذره‌ای اذیت نشدم بلکه از رژیمم لذت بردم همه چی خوردم همه جا
+                رفتم بدون محدودیت
+            </p>
+        </div>
+    </div>
+    <div>
+
+        <div class="swiper-pagination "></div>
+    </div>
+</div>
+<div class="d-sm-block d-lg-none d-md-none  swiper featured-slider mb-5 " id="swiper-5">
+    <div class="swiper-wrapper p-3 ">
+        <div class="swiper-slide box category-slider p-2 ">
+            <div class="d-flex justify-content-center mb-4">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(22).webp" alt="testimonial"
+                     class="rounded-circle shadow-1-strong" width="100" height="100"/>
+            </div>
+            <p class="font-italic font-weight-normal mb-0">اکرم میرشکاری</p>
+            <div class="star-rate">
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+            </div>
+            <p class=" my-3 p-2 desc-text-size">
+                با اکسیژن فیت موفق شدم ۶۲کیلو وزن کم کنم حتی ذره‌ای اذیت نشدم بلکه از رژیمم لذت بردم همه چی خوردم همه جا
+                رفتم بدون محدودیت
+            </p>
+        </div>
+        <div class="swiper-slide box category-slider  p-2 ">
+            <div class="d-flex justify-content-center mb-4">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(22).webp" alt="testimonial"
+                     class="rounded-circle shadow-1-strong" width="100" height="100"/>
+            </div>
+            <p class="font-italic font-weight-normal mb-0">اکرم میرشکاری</p>
+            <div class="star-rate">
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+            </div>
+            <p class=" my-3 p-2 desc-text-size">
+                با اکسیژن فیت موفق شدم ۶۲کیلو وزن کم کنم حتی ذره‌ای اذیت نشدم بلکه از رژیمم لذت بردم همه چی خوردم همه جا
+                رفتم بدون محدودیت
+            </p>
+        </div>
+        <div class="swiper-slide box category-slider  p-2 ">
+            <div class="d-flex justify-content-center mb-4">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(22).webp" alt="testimonial"
+                     class="rounded-circle shadow-1-strong" width="100" height="100"/>
+            </div>
+            <p class="font-italic font-weight-normal mb-0">اکرم میرشکاری</p>
+            <div class="star-rate">
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+            </div>
+            <p class=" my-3 p-2 desc-text-size">
+                با اکسیژن فیت موفق شدم ۶۲کیلو وزن کم کنم حتی ذره‌ای اذیت نشدم بلکه از رژیمم لذت بردم همه چی خوردم همه جا
+                رفتم بدون محدودیت
+            </p>
+        </div>
+        <div class="swiper-slide box category-slider  p-2 ">
+            <div class="d-flex justify-content-center mb-4">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(22).webp" alt="testimonial"
+                     class="rounded-circle shadow-1-strong" width="100" height="100"/>
+            </div>
+            <p class="font-italic font-weight-normal mb-0">اکرم میرشکاری</p>
+            <div class="star-rate">
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+                <span>
+                    <img src="/images/landing/star-fill.svg" alt="star"/>
+                </span>
+            </div>
+            <p class=" my-3 p-2 desc-text-size">
+                با اکسیژن فیت موفق شدم ۶۲کیلو وزن کم کنم حتی ذره‌ای اذیت نشدم بلکه از رژیمم لذت بردم همه چی خوردم همه جا
+                رفتم بدون محدودیت
+            </p>
+        </div>
+    </div>
+    <div>
+
+        <div class="swiper-pagination "></div>
+    </div>
+</div>
+</div>
+<div
+    class="row mt-lg-4 mt-md-3 mt-sm-3  p-2 pt-3  pt-lg-3 pt-md-2 pt-sm-2 d-none d-lg-block d-xl-block d-xxl-block ">
+    <div class="pe-lg-5 pe-sm-0 pe-md-0">
+        <h5 class="mb-3 font-size-title mobile-font-size-title">
+            تصاویر برنامه<span class="o2-text-color"> اکسیژن فیت</span>
+        </h5>
+    </div>
+</div>
+<div class="row app-shot-one d-none d-lg-block" id=" screens" dir="ltr">
+    <div class="app-shot-one__carousel owl-theme owl-carousel thm__owl-carousel owl-dot-type1">
+
+        <div class="item">
+            <img src="/Images/landing/AppShots/کالری-شمار-اکسیژن-فیت-1.jpg" alt="o2fit app"/>
+        </div><!-- /.item -->
+        <div class="item">
+            <img src="/Images/landing/AppShots/کالری-شمار-اکسیژن-فیت-2.jpg" alt="o2fit app"/>
+        </div><!-- /.item -->
+        <div class="item">
+            <img src="/Images/landing/AppShots/کالری-شمار-اکسیژن-فیت-2.jpg" alt="o2fit app"/>
+        </div>
+        <div class="item">
+            <img src="/Images/landing/AppShots/کالری-شمار-اکسیژن-فیت-3.jpg" alt="o2fit app"/>
+        </div>
+        <div class="item">
+            <img src="/Images/landing/AppShots/کالری-شمار-اکسیژن-فیت-4.jpg" alt="o2fit app"/>
+        </div>
+        <div class="item">
+            <img src="/Images/landing/AppShots/کالری-شمار-اکسیژن-فیت-5.jpg" alt="o2fit app"/>
+        </div>
+        <div class="item">
+            <img src="/Images/landing/AppShots/کالری-شمار-اکسیژن-فیت-7.jpg" alt="o2fit app"/>
+        </div>
+        <div class="item">
+            <img src="/Images/landing/AppShots/کالری-شمار-اکسیژن-فیت-8.jpg" alt="o2fit app"/>
+        </div>
+        <div class="item">
+            <img src="/Images/landing/AppShots/کالری-شمار-اکسیژن-فیت-9.jpg" alt="o2fit app"/>
+        </div>
+        <div class="item">
+            <img src="/Images/landing/AppShots/کالری-شمار-اکسیژن-فیت-10.jpg" alt="o2fit app"/>
+        </div>
+        <div class="item">
+            <img src="/Images/landing/AppShots/کالری-شمار-اکسیژن-فیت-11.jpg" alt="o2fit app"/>
+        </div>
+        <div class="item">
+            <img src="/Images/landing/AppShots/کالری-شمار-اکسیژن-فیت-11.jpg" alt="o2fit app"/>
+        </div>
+        <div class="item">
+            <img src="/Images/landing/AppShots/کالری-شمار-اکسیژن-فیت-12.jpg" alt="o2fit app"/>
+        </div>
+        <div class="item">
+            <img src="/Images/landing/AppShots/کالری-شمار-اکسیژن-فیت-13.jpg" alt="o2fit app"/>
+        </div>
+        <div class="item">
+            <img src="/Images/landing/AppShots/کالری-شمار-اکسیژن-فیت-15.jpg" alt="o2fit app"/>
+        </div>
+    </div>
+</div>
+
+
+<div class="row mt-2 ">
+    <div class="col-12 d-flex justify-content-between align-items-center">
+        <h5 class="text-end pb-2 pt-5 font-size-title mobile-font-size-title">آخرین مقالات</h5>
+        <div class="text-end pb-2 pt-5">
+            <a href="@Url.Action("Index", "Blog")"
+               class="mobile-font-size-paragraph O2-bg-color rounded-3 text-center align-self-center p-1 text-decoration-none text-white wow animate__animated animate__fadeIn fs-large text-decoration-none">
+                مشاهده همه
+            </a>
+        </div>
+    </div>
+    <div class="row mb-5 " dir="ltr">
+        <div class="row ">
+            <div class="swiper-container featured-slider overflow-hidden" id="swiper-6" style="height: 385px!important;">
+                <div class="swiper-wrapper">
+                    @{
+                        foreach (var i in blogs)
+                        {
+                            <div class="swiper-slide ">
+                                <div class="card p-0 m-auto mb-4 custom-card blog-card text-decoration-none">
+                                    <div >
+                                        <a href="@Url.Action("BlogById", "Blog", new { id = @i.Id })" class="text-decoration-none">
+                                            <img class="bd-placeholder-img card-img-cat-top w-100 img-fluid blog-card-image" src="https://blog.o2fitt.com/blogimage/@i.ImageName" alt="@i.AltImage"/>
+
+                                        </a>
+                                        <div class="card-body card-text-screen text-end p-1 blog-card-body px-2">
+                                            <h5 class="card-cat-header mt-1">@i.Title.Persian</h5>
+                                            <p class="card-text-blog text-overflow-cat-card">
+                                                @i.ShortDescription.Persian
+                                            </p>
+                                            <div class="d-flex justify-content-between align-items-center mx-2">
+                                                <small class="text-body-secondary" style="font-size: x-small;">نویسنده:مهدی الهی</small>
+                                                <small class="text-body-secondary" style="font-size: x-small;">@i.InsertDate</small>
+                                            </div>
+                                            <div class="border-top mt-2 mx-auto w-100">
+                                                <div class="d-flex justify-content-between align-items-center  px-2 py-2">
+                                                    <div class="text-body-secondary mt-1 d-flex justify-content-start gap-2">
+                                                        <a class="text-decoration-none" href="https://telegram.me/share/url?url=https://blog.o2fitt.com/Blog/BlogById/@i.Id&text=@i.Title.Persian">
+                                                            <img src="/Images/Blog/telegram.svg" alt="telegram" width="25"/>
+                                                        </a>
+                                                        <a class="text-decoration-none" href="whatsapp://send?text=https://blog.o2fitt.com/Blog/BlogById/@i.Id">
+                                                            <img src="/Images/Blog/social.png" alt="whatsapp" width="25"/>
+                                                        </a>
+                                                    </div>
+                                                    <div>
+                                                        <form class="d-flex justify-content-center align-items-center like-blog">
+                                                            <a class="text-body-secondary text-decoration-none like-blog" type="button">
+                                                                <img class="like-image" src="/Images/Icons/heart-empty.png" alt="like" width="20"/>
+                                                            </a>
+                                                            <input name="blogLike" value="@i.Like" class="border-0 bg-transparent like-input" size="@i.Like.ToString().Length" readonly="readonly" disabled="disabled"/>
+                                                            <input name="blogId" value="@i.Id" disabled="disabled" hidden="hidden"/>
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="row mt-lg-5 mt-md-4 mt-sm-4  p-3 pt-4  pt-lg-4 pt-md-3 pt-sm-3 ">
+        <div class="pe-lg-1 pe-sm-0 pe-md-0">
+            <h5 style="font-size: x-large;font-weight: 600;" class="mb-3 mobile-font-size-title">
+                تماس با ما
+            </h5>
+        </div>
+    </div>
+    <div class="row mb-5 " id="ContactUs">
+        <div class="col-sm-12 col-md-6 col-lg-7 p-3 ">
+            <p class="fw-bold fs-6 mb-4 ">
+                اگر نظر و یا پیشنهادی دارید از طریق فرم روبرو یا کانال های ارتباطی زیر با ما در میان بگذارید
+            </p>
+            <p class="mb-3 ">
+                آدرس : تهران، یوسف آباد، خیابان فتحی شقاقی، پلاک 96
+            </p>
+            <p class="mb-1 ">
+                تلفن : 02188350003
+            </p>
+            <p class="mb-4">واتس اپ پشتیبانی: 09334851410</p>
+            <div class="d-flex flex-column align-content-center justify-content-evenly">
+                <p class="mb-2 mt-3 wow animate__animated animate__fadeIn">اکسیژن فیت در شبکه های اجتماعی</p>
+                <div class="d-flex justify-content-start flex-wrap   gap-3 p-2  mt-1">
+                    <a href="https://www.youtube.com/o2fit542" target="_blank">
+                        <img src="/images/landing/vecteezy_youtube-logo-png-youtube-icon-transparent_18930575.png" width="60"
+                             alt="youtube" height="60" class="wow animate__animated animate__fadeIn"/>
+                    </a>
+                    <a href="https://www.instagram.com/o2fit.fa/" target="_blank">
+                        <img src="/images/landing/instagram.png" alt="instagram" width="60" height="60" class="wow animate__animated animate__fadeIn">
+                    </a>
+                    <a href="https://t.me/o2fit_fa" target="_blank">
+                        <img src="/images/landing/Telegram_logo.png" alt="telegram" width="60" height="60" class="wow animate__animated animate__fadeIn"/>
+                    </a>
+                    <a href="https://fb.com/o2fit.fa" target="_blank">
+                        <img src="/images/landing/facebook.png" width="60" height="60" class="wow animate__animated animate__fadeIn"/>
+                    </a>
+                    <a href="https://www.aparat.com/O2Fit" target="_blank">
+                        <img src="/images/landing/Aparat.png" alt="aparat" width="60" height="60" class="wow animate__animated animate__fadeIn"/>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=+989334851410&text=%20%D8%B3%D9%84%D8%A7%D9%85.%20%D9%88%D9%82%D8%AA%20%D8%A8%D8%AE%DB%8C%D8%B1!" target="_blank">
+                        <img src="/images/landing/Group 2644.png" alt="whatsapp" width="60" height="60" class="wow animate__animated animate__fadeIn"/>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-5 pt-sm-4 ">
+            <label for="basic-url">ایمیل شما</label>
+            <div class="input-group-lg  mb-3 p-3 ">
+                <input type="text" class="form-control w-100 placeholder-fs" placeholder="exp: sample@gmail.com"
+                       required id="Mess_email">
+            </div>
+            <label for="basic-url">عنوان</label>
+            <div class="input-group-lg mb-3 p-3  ">
+                <input type="text" class="form-control w-100 placeholder-sm placeholder-fs"
+                       placeholder="مثال: راهنمایی از پشتیبانی" required id="Mess_subject">
+            </div>
+            <label for="basic-url">توضیحات</label>
+            <div class="input-group-lg p-3 ">
+                <textarea class="form-control w-100 placeholder-fs" style="height: 150px;" maxlength="400" id="Mess_text"
+                placeholder="توضیحات خودتون رو اینجا وارد کنین" aria-label="With textarea"></textarea>
+            </div>
+            <div class="input-group-lg  p-3 h-25 ">
+                <button type="button" class="btn  w-100  text-white p-4  placeholder-fs" id="contactUsBtn" onclick="sendMessage()"
+                        style="background-color: #A2A2A2;">
+                    ارسال
+                    پیام
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div class="row mt-5 pt-4  o2fit-home-banner" dir="rtl">
+    <div class="col-sm-12 col-md-12 col-lg-6 d-flex flex-column justify-content-center align-content-center">
+        <div class=" d-flex  flex-column justify-content-start align-content-center p-3">
+            <span class="text-white text-end h4 mobile-font-size-title" style="font-weight: 800">تو هم براحتی فیت شو!</span>
+            <span class="text-end o2fit-home-text mobile-font-size-paragraph">
+                همین الان اکسیژن فیت رو نصب کن و شروع کن
+            </span>
+        </div>
+        <div
+            class="d-flex justify-content-center justify-content-md-start justify-content-sm-center justify-content-lg-start flex-wrap align-content-center gap-3 p-3">
+            <a href="https://cafebazaar.ir/app/com.o2fitt" target="_blank">
+                <img src="/images/landing/bazzar.png" alt="bazzar" width="200">
+            </a>
+            <a href="https://apps.apple.com/us/app/o2fit-diet-calorie-counter/id1556681170" target="_blank">
+                <img src="/images/landing/App-Store.png" alt="appstore" width="200">
+            </a>
+            <a href="https://myket.ir/app/com.o2fitt?utm_source=search-ads-gift&utm_medium=cpc" target="_blank">
+                <img src="/images/landing/Play Store.png" alt="myket" width="200">
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.o2fitt&hl=fa&gl=ir" target="_blank">
+                <img src="/images/landing/google-Store.png" alt="googlePlay" width="200">
+            </a>
+            <a href="/DownloadApp" target="_blank">
+                <img src="/images/Landing/direct.png" alt="direct" width="200">
+            </a>
+        </div>
+    </div>
+    <div class="d-none d-sm-none  d-md-none d-lg-block  col-lg-6">
+        <a href="https://play.google.com/store/apps/details?id=com.o2fitt">
+            <img src="/images/landing/o2fit-install.png">
+        </a>
+    </div>
+</div>
+
+
+</div>
+<div id="myModal" class="modal22">
+    <!-- Modal content -->
+    <div class="modal-content22">
+        <span class="close p-2 mb-1" style="cursor: pointer;border-radius: 10px">
+            <img src="Images/Icons/close.png" width="20" alt="close btn"/>
+        </span>
+        <div class="h_iframe-aparat_embed_frame">
+            <span style="display: block;padding-top: 57%"></span>
+            <iframe
+                id="myIframe"
+                allow="autoplay" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+@section script
+{
+    <script>
+        // Get the button, modal, and iframe
+        const openModalButton = document.getElementById('open-modal');
+        const openModalButton2 = document.getElementById('open-modal2');
+        const modal = document.getElementById('myModal');
+        const closeModal = document.getElementsByClassName('close')[0];
+        const iframe = document.getElementById('myIframe');
+    
+        // Add click event listener to open the modal
+        openModalButton.addEventListener('click', function() {
+            modal.style.display = 'block'; // Show the modal
+            // Set the URL for the iframe
+            iframe.src = 'https://www.aparat.com/video/video/embed/videohash/YOzMq/vt/frame?autoplay=true';
+        });  
+        openModalButton2.addEventListener('click', function() {
+                       modal.style.display = 'block'; // Show the modal
+                       // Set the URL for the iframe
+                       iframe.src = 'https://www.aparat.com/video/video/embed/videohash/YOzMq/vt/frame?autoplay=true';
+                   });
+    
+        // Add click event listener to close the modal when close button is clicked
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none'; // Hide the modal
+            // Pause the iframe content when modal is closed
+            iframe.src = '';
+        });
+    
+        // Close the modal when clicking outside of it
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none'; // Hide the modal
+                // Pause the iframe content when modal is closed
+                iframe.src = '';
+            }
+        });
+    </script>
+
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="~/poliz/js/owl.carousel.min.js"></script>
+    <script src="~/poliz/js/theme.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      $('.owl-carousel').owlCarousel({ "loop": true, "margin": 30, "nav": false, "dots": true, "autoWidth": false, "autoplay": true, "smartSpeed": 700, "autoplayTimeout": 5000, "autoplayHoverPause": true, "slideBy": 5, "responsive": {
+                                                    "0": { "items": 1 },
+                                                    "480": { "items": 2 },
+                                                    "600": { "items": 5 },
+                                                    "991": { "items": 5 },
+                                                    "1000": { "items": 5 },
+                                                    "1200": { "items": 5 }
+                                                }})
+    });
+
+   
+</script>
+    @* <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" *@
+    @*         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"> *@
+    @*   </script> *@
+    <script>
+     const options = {
+         enableScrollSpy:true,
+         scrollSpyOnce:true,
+         duration:2,
+         suffix:"+"
+     };
+     const a = new countUp.CountUp("a", 900000,options);
+     const b = new countUp.CountUp("b", 2500000,options);
+     const c = new countUp.CountUp("c", 150000,options);
+     const d = new countUp.CountUp("d", 100000,options);
+     a.start();
+     b.start();
+     c.start();
+     d.start();
+    </script>
+    <script>
+                    function sendMessage() {
+                        var Email = window.$("#Mess_email").val();
+                        var Subject = window.$("#Mess_subject").val();
+                        var Message = window.$("#Mess_text").val();
+                        if (Email && Subject && Message) {
+                            window.$.ajax({
+                                type: "Post",
+                                url: '/Home/SendMessage',
+                                data: { Email, Subject, Message },
+                                dataType: "json",
+                                success: function () {
+                                    window.$('.re-cap').prop('disabled', false);
+                                    window.$("#Mess_email").val("");
+                                    window.$("#Mess_subject").val("");
+                                    window.$("#Mess_text").val("");
+                                    alert("پیام شما با موفقیت ارسال شد");
+                                },
+                                beforeSend: function () {
+                                    window.$('.re-cap').prop('disabled', true);
+                                },
+                                error: function (req, status, error) {
+                                    window.$('.re-cap').prop('disabled', false);
+                                    alert(error);
+                                }
+                            });
+                        } else {
+                            alert("اطلاعات خود را تکمیل کنید");
+                        }
+                    };
+                     $(".close-iframe").click(function (){
+                             $('#AparatFrame').attr('src', $('#AparatFrame').attr('src'));
+                         })
+                </script>
+}

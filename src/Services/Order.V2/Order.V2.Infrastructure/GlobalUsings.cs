@@ -1,0 +1,30 @@
+// Global using directives
+
+global using System.Collections;
+global using System.Linq.Expressions;
+global using System.Text;
+global using System.Text.Json;
+global using EventBus.Messages.Events;
+global using EventStore.Client;
+global using MediatR;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using MongoDB.Bson;
+global using MongoDB.Bson.Serialization;
+global using MongoDB.Bson.Serialization.Conventions;
+global using MongoDB.Bson.Serialization.IdGenerators;
+global using MongoDB.Bson.Serialization.Serializers;
+global using MongoDB.Driver;
+global using MongoDB.Driver.Linq;
+global using Newtonsoft.Json;
+global using Order.V2.Application.Common.Interfaces.Persistence.Repositories;
+global using Order.V2.Application.Common.Interfaces.Persistence.UoW;
+global using Order.V2.Application.Common.Interfaces.Services;
+global using Order.V2.Application.Common.Models;
+global using Order.V2.Domain.Common;
+global using Order.V2.Infrastructure.Common;
+global using Order.V2.Infrastructure.Persistence;
+global using Order.V2.Infrastructure.Persistence.Repositories;
+global using Order.V2.Infrastructure.Persistence.UoW;
+global using Order.V2.Infrastructure.Services;
+global using StackExchange.Redis;

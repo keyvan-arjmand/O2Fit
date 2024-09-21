@@ -1,0 +1,30 @@
+﻿// Global using directives
+
+global using System.Collections;
+global using System.Linq.Expressions;
+global using System.Text;
+global using System.Text.Json;
+global using EventBus.Messages.Events;
+global using EventStore.Client;
+global using MediatR;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using MongoDB.Bson;
+global using MongoDB.Bson.Serialization;
+global using MongoDB.Bson.Serialization.Conventions;
+global using MongoDB.Bson.Serialization.IdGenerators;
+global using MongoDB.Bson.Serialization.Serializers;
+global using MongoDB.Driver;
+global using MongoDB.Driver.Linq;
+global using Newtonsoft.Json;
+global using StackExchange.Redis;
+global using Wallet.Application.Common.Interfaces.Persistence.Repositories;
+global using Wallet.Application.Common.Interfaces.Persistence.UoW;
+global using Wallet.Application.Common.Interfaces.Services;
+global using Wallet.Application.Common.Models;
+global using Wallet.Domain.Common;
+global using Wallet.Infrastructure.Common;
+global using Wallet.Infrastructure.Persistence;
+global using Wallet.Infrastructure.Persistence.Repositories;
+global using Wallet.Infrastructure.Persistence.UoW;
+global using Wallet.Infrastructure.Services;

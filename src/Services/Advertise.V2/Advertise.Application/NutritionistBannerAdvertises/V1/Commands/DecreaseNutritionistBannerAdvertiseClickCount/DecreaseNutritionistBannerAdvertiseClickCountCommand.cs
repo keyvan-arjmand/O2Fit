@@ -1,0 +1,3 @@
+﻿namespace Advertise.Application.NutritionistBannerAdvertises.V1.Commands.DecreaseNutritionistBannerAdvertiseClickCount;
+
+public record DecreaseNutritionistBannerAdvertiseClickCountCommand(string Id) : IRequest;

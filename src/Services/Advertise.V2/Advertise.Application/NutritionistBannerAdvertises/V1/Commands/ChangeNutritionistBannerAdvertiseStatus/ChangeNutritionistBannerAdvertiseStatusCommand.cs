@@ -1,0 +1,3 @@
+﻿namespace Advertise.Application.NutritionistBannerAdvertises.V1.Commands.ChangeNutritionistBannerAdvertiseStatus;
+
+public record ChangeNutritionistBannerAdvertiseStatusCommand(string Id, AdvertiseStatus Status) : IRequest;

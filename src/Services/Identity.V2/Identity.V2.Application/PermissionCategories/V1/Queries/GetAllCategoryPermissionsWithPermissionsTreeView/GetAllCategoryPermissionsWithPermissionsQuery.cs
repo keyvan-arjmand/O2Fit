@@ -1,0 +1,3 @@
+﻿namespace Identity.V2.Application.PermissionCategories.V1.Queries.GetAllCategoryPermissionsWithPermissionsTreeView;
+
+public record GetAllCategoryPermissionsWithPermissionsQuery() : IRequest<List<CategoryPermissionWithPermissionsForTreeViewDto>>;

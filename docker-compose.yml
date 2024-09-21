@@ -1,0 +1,405 @@
+version: '3.4'
+
+
+services:
+  
+  # ========= Food ===========
+  foodstuff.api:
+    image: ${DOCKER_REGISTRY-}foodstuffapi
+    build:
+      context: .
+      dockerfile: src/Services/Food/FoodStuff.API/Dockerfile
+  
+  foodstuffcache:
+    image: redis
+
+
+    # ========= Food gRPC ===========
+  foodstuff.grpc:
+    image: ${DOCKER_REGISTRY-}foodstuffgrpc
+    build:
+      context: .
+      dockerfile: src/Services/FoodGrpc/Food.Grpc/Dockerfile
+  
+  foodgrpccache:
+    image: redis
+    
+    
+    # ========= Advertise ===========
+
+  advertise.api:
+    image: ${DOCKER_REGISTRY-}advertiseapi
+    build:
+      context: .
+      dockerfile: src/Services/Advertise/Advertising.API/Dockerfile
+
+  advertisecache:
+    image: redis
+
+
+  # ======= Blogging =========
+  blogging.api:
+    image: ${DOCKER_REGISTRY-}bloggingapi
+    build:
+      context: .
+      dockerfile: src/Services/Blog/Blogging.API/Dockerfile
+
+
+  bloggingcache:
+    image: redis
+
+
+  #======== Identity ========
+  identity.api:
+    image: ${DOCKER_REGISTRY-}identityapi
+    build:
+      context: .
+      dockerfile: src/Services/Identity/Identity.API/Dockerfile
+
+  identitycache:
+    image: redis
+  
+  #======== Ordering =========
+  ordering.api:
+    image: ${DOCKER_REGISTRY-}orderingweb
+    build:
+      context: .
+      dockerfile: src/Services/Order/Ordering.API/Dockerfile
+
+  ordering.web:
+    image: ${DOCKER_REGISTRY-}orderingweb
+    build:
+      context: .
+      dockerfile: src/Services/Order/Ordering.Web/Dockerfile
+
+  orderingapicache:
+    image: redis
+    
+    
+    #======== Socialmessaging ==========
+  
+  socialmessaging.api:
+    image: ${DOCKER_REGISTRY-}socialmessagingapi
+    build:
+      context: .
+      dockerfile: src/Services/Social/SocialMessaging.API/Dockerfile
+
+  socialmessagingcache:
+    image: redis
+    
+    
+    #======== User ==========
+
+  user.api:
+    image: ${DOCKER_REGISTRY-}userapi
+    build:
+      context: .
+      dockerfile: src/services/User/User.API/Dockerfile
+
+  usercache:
+    image: redis
+
+  #====== o2fituserhistory ============
+
+  o2fituserhistory.api:
+    image: ${DOCKER_REGISTRY-}o2fituserhistoryapi
+    build:
+      context: .
+      dockerfile: src/Services/O2fitUserHistory.Api/Dockerfile
+  
+  #====== workouttracker ============
+  
+  
+  workouttracker.api:
+    image: ${DOCKER_REGISTRY-}workouttrackerapi
+    build:
+      context: .
+      dockerfile: src/Services/WorkOut/WorkoutTracker.API/Dockerfile
+  
+  workouttrackercache:
+    image: redis
+
+
+    #=========== Identity V2 ===============
+  identity.v2.api:
+    image: ${DOCKER_REGISTRY-}identityv2api
+    build:
+      context: .
+      dockerfile: src/Services/Identity.V2/Identity.V2.Api/Dockerfile
+  
+  identity.v2.api2:
+    image: ${DOCKER_REGISTRY-}identityv2api2
+    build:
+      context: .
+      dockerfile: src/Services/Identity.V2/Identity.V2.Api/Dockerfile
+  
+  identity.v2.testweb:
+    image: ${DOCKER_REGISTRY-}identityv2testweb
+    build:
+      context: .
+      dockerfile: src/Services/Identity.V2/Identity.V2.TestWeb/Dockerfile
+  
+  identity.v2.testapi:
+    image: ${DOCKER_REGISTRY-}identity.v2.testapi
+    build:
+      context: .
+      dockerfile: src/Services/Identity.V2/Identity.V2.TestApi/Dockerfile
+  
+  identity.v2.resourceserver:
+    image: ${DOCKER_REGISTRY-}identity.v2.resourceserver
+    build:
+      context: .
+      dockerfile: src/Services/Identity.V2/Identity.V2.ResourceServer/Dockerfile
+  
+  identity.v2.grpc:
+    image: ${DOCKER_REGISTRY-}identity.v2.grpc
+    build:
+      context: .
+      dockerfile: src/Services/Identity.V2/Identity.V2.Grpc/Dockerfile
+  
+  
+  identity.v2.cashe:
+    image: redis
+    
+    #  jobdb:
+    #    image: postgres
+    #=========== Payment ================
+
+  payment.api:
+    image: ${DOCKER_REGISTRY-}paymentapi
+    build:
+      context: .
+      dockerfile: src/Services/Payment/Payment.Api/Dockerfile
+
+  payment.web:
+    image: ${DOCKER_REGISTRY-}paymentweb
+    build:
+      context: .
+      dockerfile: src/Services/Payment/Payment.Web/Dockerfile
+
+  payment.grpc:
+    image: ${DOCKER_REGISTRY-}paymentgrpc
+    build:
+      context: .
+      dockerfile: src/Services/Payment/Payment.Grpc/Dockerfile
+  
+  
+  payment.cache:
+    image: redis
+
+  #=========== Discount ================
+
+  discount.api:
+    image: ${DOCKER_REGISTRY-}discountapi
+    build:
+      context: .
+      dockerfile: src/Services/Discount/Discount.Api/Dockerfile
+
+  discount.grpc:
+    image: ${DOCKER_REGISTRY-}discountgrpc
+    build:
+      context: .
+      dockerfile: src/Services/Discount/Discount.Grpc/Dockerfile
+
+  discount.cache:
+    image: redis
+  
+  # ========= Order.V2 ===============
+  order.v2.api:
+    image: ${DOCKER_REGISTRY-}orderapi
+    build:
+      context: .
+      dockerfile: src/Services/Order.V2/Order.V2.Api/Dockerfile
+
+  order.v2.grpc:
+    image: ${DOCKER_REGISTRY-}orderv2grpc
+    build:
+      context: .
+      dockerfile: src/Services/Order.V2/Order.V2.Grpc/Dockerfile
+  
+  
+  order.v2.cache:
+    image: redis
+  
+  # ======= Currency ==============
+  currency.api:
+    image: ${DOCKER_REGISTRY-}currencyapi
+    build:
+      context: .
+      dockerfile: src/Services/Currency/Currency.Api/Dockerfile
+
+  currency.grpc:
+    image: ${DOCKER_REGISTRY-}currencygrpc
+    build:
+      context: .
+      dockerfile: src/Services/Currency/Currency.Grpc/Dockerfile
+
+  currency.cache:
+    image: redis
+  
+  # ======= Wallet ==============
+  wallet.api:
+    image: ${DOCKER_REGISTRY-}wallet.api
+    build:
+      context: .
+      dockerfile: src/Services/Wallet/Wallet.Api/Dockerfile
+  
+  wallet.grpc:
+    image: ${DOCKER_REGISTRY-}wallet.grpc
+    build:
+      context: .
+      dockerfile: src/Services/Wallet/Wallet.Grpc/Dockerfile
+  
+  wallet.cache:
+    image: redis
+    
+    #======== Track ============
+  track.api:
+    image: ${DOCKER_REGISTRY-}track.api
+    build:
+      context: .
+      dockerfile: src/Services/Track/Track.Api/Dockerfile
+  
+  track.grpc:
+    image: ${DOCKER_REGISTRY-}track.grpc
+    build:
+      context: .
+      dockerfile: src/Services/Track/Track.Grpc/Dockerfile
+  
+  
+  track.cache:
+    image: redis
+  
+  
+  #======= Food V2 ============
+  food.v2.api:
+    image: ${DOCKER_REGISTRY-}food.v2.api
+    build:
+      context: .
+      dockerfile: src/Services/Food.V2/Food.V2.Api/Dockerfile
+  
+  food.v2.cache:
+    image: redis
+  
+  #========== Notification ===========
+  notification.api:
+    image: ${DOCKER_REGISTRY-}notification.api
+    build:
+      context: .
+      dockerfile: src/Services/Notification/Notification.Api/Dockerfile
+  
+  notification.api-2:
+    image: ${DOCKER_REGISTRY-}notification.api
+    build:
+      context: .
+      dockerfile: src/Services/Notification/Notification.Api/Dockerfile
+  
+  
+  notification.api-3:
+    image: ${DOCKER_REGISTRY-}notification.api
+    build:
+      context: .
+      dockerfile: src/Services/Notification/Notification.Api/Dockerfile
+  
+  notification.cache:
+    image: redis
+    
+    #=========== Nutritionist ==============
+  nutritionist.api:
+    image: ${DOCKER_REGISTRY-}nutritionist.api
+    build:
+      context: .
+      dockerfile: src/Services/Nutritionist/Nutritionist.Api/Dockerfile
+  
+  nutritionist.cache:
+    image: redis
+    
+    #=========== Ticket ============
+  ticket.api:
+    image: ${DOCKER_REGISTRY-}ticket.api
+    build:
+      context: .
+      dockerfile: src/Services/Ticket/Ticket.Api/Dockerfile
+
+  ticket.cache:
+    image: redis
+  
+  #=========== Advertise ============
+  advertise.v2.api:
+    image: ${DOCKER_REGISTRY-}advertise.api
+    build:
+      context: .
+      dockerfile: src/Services/Advertise.V2/Advertise.Api/Dockerfile
+  
+  advertise.cache:
+    image: redis
+  
+  #============ Workout V2 ==============
+  workout.v2.api:
+    image: ${DOCKER_REGISTRY-}workout.v2.api
+    build:
+      context: .
+      dockerfile: src/Services/Workout.V2/Workout.V2.Api/Dockerfile
+  
+  workout.v2.cache:
+    image: redis
+
+    #======== Market ========
+  market.api:
+    image: ${DOCKER_REGISTRY-}market.api
+    build:
+      context: .
+      dockerfile: src/Services/Market/Market.api/Dockerfile
+      
+      
+  market.cache:
+    image: redis  
+    
+ #========== Chat ==========
+  chat.api:
+    image: ${DOCKER_REGISTRY-}chat.api
+    build:
+      context: .
+      dockerfile: src/Services/Chat/Chat.Api/Dockerfile
+      
+  chat.cache:
+    image: redis
+    
+    
+    
+    #======== yarpapigateway ===========
+  
+  yarpapigateway.api:
+    image: ${DOCKER_REGISTRY-}yarpapigatewayapi
+    build:
+      context: .
+      dockerfile: src/ApiGateways/YarpApiGateway/Dockerfile
+  
+  yarp-api-gateway-service-discovery:
+    image: ${DOCKER_REGISTRY-}yarpapigatewayservicediscovery
+    build:
+      context: .
+      dockerfile: src/ApiGateways/YarpApiGatewayServiceDiscovery/Dockerfile
+  
+  eureka-server:
+    image: steeltoeoss/eureka-server
+
+  #====== rabbitmq ===========
+  
+  #rabbitmq:
+  #  image: masstransit/rabbitmq
+  
+  #====== EventSourcing ===========
+
+  eventsourcing:
+    image: eventstore/eventstore:21.10.0-buster-slim
+  
+  
+  #========= Mongodb =========
+  #test.mongodb:
+  #  image: mongo
+  
+  #====== Integration Tests =========
+  
+  # integration.tests:
+  #   image: mcr.microsoft.com/dotnet/sdk:7.0

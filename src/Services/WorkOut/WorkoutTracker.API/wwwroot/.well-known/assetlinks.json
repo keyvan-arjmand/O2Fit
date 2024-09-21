@@ -1,0 +1,10 @@
+[
+  {
+    "relation": [ "delegate_permission/common.handle_all_urls" ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.o2fitt",
+      "Sha256_cert_fingerprints": [ "55:52:04:CA:88:43:8E:C9:AF:E8:DF:8B:84:5A:52:3C:4C:A7:FA:81:81:90:A0:B7:66:DB:85:33:34:CB:87:AC" ]
+    }
+  }
+]

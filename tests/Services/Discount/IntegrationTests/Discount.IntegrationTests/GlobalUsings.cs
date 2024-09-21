@@ -1,0 +1,13 @@
+global using Discount.Application.Common.Interfaces.Persistence.UoW;
+global using Discount.Infrastructure.Persistence.UoW;
+global using DotNet.Testcontainers.Builders;
+global using MassTransit;
+global using MassTransit.Testing;
+global using Microsoft.AspNetCore.Hosting;
+global using Microsoft.AspNetCore.Mvc.Testing;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using NUnit.Framework;
+global using Testcontainers.EventStoreDb;
+global using Testcontainers.MongoDb;
+global using Testcontainers.RabbitMq;

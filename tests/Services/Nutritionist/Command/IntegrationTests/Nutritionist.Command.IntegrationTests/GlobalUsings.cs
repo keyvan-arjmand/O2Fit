@@ -1,0 +1,12 @@
+global using DotNet.Testcontainers.Builders;
+global using FluentAssertions;
+global using Microsoft.AspNetCore.Hosting;
+global using Microsoft.AspNetCore.Mvc.Testing;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using NUnit.Framework;
+global using Nutritionist.Command.IntegrationTests.Utilities;
+global using Testcontainers.EventStoreDb;
+global using Testcontainers.MongoDb;
+global using Testcontainers.RabbitMq;
+global using static Nutritionist.Command.IntegrationTests.Testing;

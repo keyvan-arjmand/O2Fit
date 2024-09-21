@@ -1,0 +1,3 @@
+﻿namespace Advertise.Application.NutritionistBannerAdvertises.V1.Commands.IncreaseNutritionistBannerAdvertiseViewCount;
+
+public record IncreaseNutritionistBannerAdvertiseViewCountCommand(string Id) : IRequest;

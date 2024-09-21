@@ -1,0 +1,110 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Content Include="..\..\..\..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+    </ItemGroup>
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\css\site.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\LICENSE" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\LICENSE.md" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.min.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\LICENSE.txt" />
+      <_ContentIncludedByDefault Remove="wwwroot\Images\Blog\1.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Images\Blog\2.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Images\Blog\3.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Images\Blog\4.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Images\Blog\app-store.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Images\Blog\diet_ico.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Images\Blog\fit_ico.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Images\Blog\google-play.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Images\Blog\ic_favorite_24px.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Images\Blog\instagram.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Images\Blog\medical_ico.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Images\Blog\O2Fitweb.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Images\Blog\phone.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Images\Blog\preg_ico.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Images\Blog\recipe_ico.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Images\Blog\telegram.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Images\Blog\whatsapp.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\dist\wow.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\dist\wow.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\dist\wow.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\dist\wow.min.js.gz" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\eot\iranyekanwebblack.eot" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\eot\iranyekanwebbold.eot" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\eot\iranyekanwebextrablack.eot" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\eot\iranyekanwebextrabold.eot" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\eot\iranyekanweblight.eot" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\eot\iranyekanwebmedium.eot" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\eot\iranyekanwebregular.eot" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\eot\iranyekanwebthin.eot" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\svg\iranyekanwebblack.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\svg\iranyekanwebbold.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\svg\iranyekanwebextrablack.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\svg\iranyekanwebextrabold.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\svg\iranyekanweblight.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\svg\iranyekanwebmedium.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\svg\iranyekanwebregular.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\svg\iranyekanwebthin.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\ttf\IranianSans.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\ttf\IRANYekanMediumFaNum.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\ttf\iranyekanwebblack.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\ttf\iranyekanwebbold.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\ttf\iranyekanwebextrablack.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\ttf\iranyekanwebextrabold.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\ttf\iranyekanweblight.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\ttf\iranyekanwebmedium.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\ttf\iranyekanwebregular.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\ttf\iranyekanwebthin.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\woff\iranyekanwebblack.woff" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\woff\iranyekanwebbold.woff" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\woff\iranyekanwebextrablack.woff" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\woff\iranyekanwebextrabold.woff" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\woff\iranyekanweblight.woff" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\woff\iranyekanwebmedium.woff" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\woff\iranyekanwebregular.woff" />
+      <_ContentIncludedByDefault Remove="wwwroot\Fonts\woff\iranyekanwebthin.woff" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Blogging.Service\Blogging.Service.csproj" />
+      <ProjectReference Include="..\Blogging.WebFramework\Blogging.WebFramework.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,33 @@
+﻿// Global using directives
+
+global using System.Net;
+global using System.Security.Claims;
+global using AutoMapper;
+global using Common.Constants.Identity;
+global using FluentValidation.AspNetCore;
+global using MassTransit;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Mvc.Authorization;
+global using Microsoft.AspNetCore.Mvc.Filters;
+global using Microsoft.AspNetCore.Mvc.ModelBinding;
+global using Microsoft.Extensions.Options;
+global using Microsoft.IdentityModel.Logging;
+global using Microsoft.IdentityModel.Tokens;
+global using Microsoft.OpenApi.Models;
+global using MongoDB.Bson;
+global using OpenIddict.Validation.AspNetCore;
+global using Swashbuckle.AspNetCore.SwaggerGen;
+global using Ticket.Api;
+global using Ticket.Api.Filters;
+global using Ticket.Api.Middlewares;
+global using Ticket.Api.Permission;
+global using Ticket.Api.Services;
+global using Ticket.Application;
+global using Ticket.Application.Common.ApiResult;
+global using Ticket.Application.Common.Exceptions;
+global using Ticket.Application.Common.Interfaces.Services;
+global using Ticket.Application.Common.Mapping;
+global using Ticket.Domain.Common;
+global using Ticket.Infrastructure;
+global using Ticket.Infrastructure.Common;

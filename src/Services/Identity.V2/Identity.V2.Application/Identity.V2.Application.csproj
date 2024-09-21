@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="EventStore.Client.Grpc.Streams" Version="21.2.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.6.0" />
+    <PackageReference Include="MassTransit" Version="8.0.16" />
+    <PackageReference Include="MassTransit.Analyzers" Version="8.0.16">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="RedisRateLimiting.AspNetCore" Version="1.0.8" />
+    
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Identity.V2.Domain\Identity.V2.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DeviceInfo\V1\Queries\GetUserData\" />
+    <Folder Include="NutritionistProfiles\V1\Commands\" />
+    <Folder Include="PermissionCategories\V1\Queries\GetCategoryPermissionByIdWithPermissions\" />
+    <Folder Include="PermissionCategories\V1\Queries\GetAllCategoryPermissionsWithPermissionsTreeView\" />
+    <Folder Include="Permissions\V1\Commands\DeletePermission\" />
+    <Folder Include="Permissions\V1\Commands\UpdatePermission\" />
+    <Folder Include="SpecialDiseases\V1\Commands\" />
+  </ItemGroup>
+
+</Project>

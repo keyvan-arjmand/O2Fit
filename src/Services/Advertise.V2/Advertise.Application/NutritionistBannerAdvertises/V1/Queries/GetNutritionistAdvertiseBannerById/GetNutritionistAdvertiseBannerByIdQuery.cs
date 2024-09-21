@@ -1,0 +1,3 @@
+﻿namespace Advertise.Application.NutritionistBannerAdvertises.V1.Queries.GetNutritionistAdvertiseBannerById;
+
+public record GetNutritionistAdvertiseBannerByIdQuery(string Id) : IRequest<NutritionistBannerAdvertiseDto>;
